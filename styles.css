@@ -328,3 +328,51 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   *{animation:none !important; transition:none !important}
   .reveal{opacity:1; transform:none}
 }
+
+/* ============ CAFÈ ============ */
+.coffee{
+  background: linear-gradient(135deg, #2a1810 0%, #4a2818 55%, #ff1493 160%);
+  color: #fff;
+  padding: clamp(60px, 9vw, 120px) clamp(20px, 6vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+.coffee::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,20,147,.18), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(255,200,150,.12), transparent 50%);
+  pointer-events:none;
+}
+.coffee__inner{
+  position:relative; max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns: 280px 1fr; gap: clamp(30px, 5vw, 70px);
+  align-items:center;
+}
+.coffee__art{ display:flex; justify-content:center; }
+.coffee__art svg{ width:100%; max-width:240px; height:auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,.4)); }
+.coffee__art .steam{ animation: steam 3s ease-in-out infinite; transform-origin: center bottom; opacity:.7; }
+.coffee__art .s2{ animation-delay:.6s }
+.coffee__art .s3{ animation-delay:1.2s }
+@keyframes steam{
+  0%,100%{ transform: translateY(0) scaleX(1); opacity:.4 }
+  50%{ transform: translateY(-6px) scaleX(1.08); opacity:.9 }
+}
+.coffee__text h2{
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height:1.05; font-weight:500; margin:.4em 0 .6em;
+}
+.coffee__text h2 em{ color:#ff1493; font-style:italic; font-weight:600; }
+.coffee__text p{ font-size: 1.05rem; line-height:1.7; opacity:.92; margin:0 0 1em; max-width:55ch; }
+.coffee__closing{ font-size:1.15rem !important; opacity:1 !important; margin-top:1.2em !important; }
+.coffee__closing strong{ color:#ff1493; }
+.eyebrow--light{ color:#ffb3d9; }
+.coffee .btn--primary{ margin-top: 1.2rem; background:#ff1493; color:#fff; }
+.coffee .btn--primary:hover{ background:#fff; color:#2a1810; }
+
+@media (max-width: 780px){
+  .coffee__inner{ grid-template-columns: 1fr; text-align:center; }
+  .coffee__art svg{ max-width:170px; }
+  .coffee__text p{ margin-left:auto; margin-right:auto; }
+}
