@@ -312,17 +312,72 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 @media (max-width: 860px){
   .hero{grid-template-columns:1fr; padding-top:40px}
   .hero__photo{order:-1; max-width:420px; margin:0 auto}
-  .nav nav{
-    position:fixed; inset:64px 0 auto 0;
-    flex-direction:column; gap:0;
-    background:#fff; border-bottom:1px solid var(--line);
-    padding:20px;
-    transform:translateY(-120%); transition:transform .35s var(--ease);
+  /* =====================================================
+     NOU DISSENY DEL MENÚ MÒBIL (CENTRAT I MODERN)
+     ===================================================== */
+  .nav nav {
+    position: fixed; 
+    inset: 64px 0 auto 0;
+    flex-direction: column; 
+    gap: 16px; /* Espaiat elegant entre enllaços */
+    background: rgba(250, 250, 250, 0.96); /* Fons blanc trencat de la web amb transparència */
+    backdrop-filter: blur(20px); /* Efecte vidre esmerilat molt modern */
+    border-bottom: 1px solid var(--line);
+    padding: 35px 20px 45px 20px; /* Més aire a dalt i a baix */
+    text-align: center; /* Centra tot el text */
+    transform: translateY(-120%); 
+    transition: transform .4s var(--ease);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05); /* Ombra suau per donar profunditat */
   }
-  .nav nav.is-open{transform:none}
-  .nav nav a{padding:14px 0; border-bottom:1px solid var(--line); width:100%; font-size:16px}
-  .nav nav a:last-child{border:none}
-  .nav__cta{display:inline-block; margin-top:10px}
+  .nav nav.is-open {
+    transform: none;
+  }
+  .nav nav a {
+    padding: 10px 0; 
+    width: auto; /* Deixa de forçar el 100% de l'ample */
+    display: inline-block;
+    font-size: 19px; /* Mida de lletra més visible i estilitzada pel mòbil */
+    font-weight: 500;
+    color: var(--ink); /* Text fosc elegant */
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+  
+  /* Línia decorativa sota els enllaços normals per donar un toc polit */
+  .nav nav a:not(.nav__cta)::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    margin: 4px auto 0;
+    transition: width 0.3s var(--ease);
+  }
+  .nav nav a:not(.nav__cta):hover::after {
+    width: 20px; /* Petita línia magenta en fer clic o passar el dit */
+  }
+
+  /* El botó de Contacte fixat per a mòbil (Deixa de veure's gegant) */
+  .nav__cta {
+    display: inline-flex !important; /* El convertim en flex per centrar el text interior */
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px !important; /* El separem una mica de la resta */
+    padding: 12px 32px !important; /* Més estilitzat, tipus píndola */
+    background: var(--ink) !important;
+    color: #fff !important;
+    border-radius: 999px !important; /* Arrodonit perfecte */
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    width: max-content !important; /* Fa que el botó s'adapti AL TEXT i no a la pantalla */
+    align-self: center; /* El centra horitzontalment dins del menú desplegable */
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.2); /* Una tènue ombra amb el teu color magenta */
+    transition: background .2s var(--ease), transform .2s var(--ease) !important;
+  }
+  .nav__cta:active {
+    transform: scale(0.96); /* Efecte de prémer un botó real al mòbil */
+    background: var(--accent) !important;
+  }
   .nav__burger{display:flex}
   .nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
