@@ -145,8 +145,8 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   font-family:'Fraunces',serif; font-size:28px;
   white-space:nowrap;
   width:max-content;
-  animation: scroll 38s linear infinite !important;
-  -webkit-animation: scroll 38s linear infinite !important;
+  animation: scroll 22s linear infinite !important;
+  -webkit-animation: scroll 22s linear infinite !important;
 }
 .marquee__track span:nth-child(even){color:var(--accent)}
 @keyframes scroll{
@@ -332,8 +332,6 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1; transform:none}
-  .marquee__track{animation:none !important}
-  .steam{animation:none !important}
 }
 
 /* ============ CAFÈ ============ */
