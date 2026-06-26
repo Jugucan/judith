@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacte — Judith Gutiérrez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="logo">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" fill="#e8007a"/>
+        <path d="M22 6 L30 14 L22 10 L14 14 Z M14 14 L10 22 L14 30 L22 22 Z M30 14 L34 22 L30 30 L22 22 Z M14 30 L22 34 L30 30 L22 22 Z" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="22" cy="22" r="4" stroke="white" stroke-width="1.5" fill="none"/>
+      </svg>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Inici</a>
+      <a href="sobre-mi.html">Sobre mi</a>
+      <a href="cv.html">CV</a>
+      <a href="contacte.html" class="active">Contacte</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menú">☰</button>
+  </header>
+
+  <div style="margin-top: 60px;">
+    <div class="contacte-header">
+      <h1>Contacte</h1>
+    </div>
+  </div>
+
+  <section class="contacte-body">
+    <div class="contacte-intro">
+      <h2>Posa't <strong>en contacte</strong></h2>
+      <p>L'èxit és qüestió de trobar les persones adequades en el moment oportú. Potser aquest és el nostre moment? Provem-ho! 😊</p>
+      <p class="contacte-data">Tel: <a href="tel:744401844">744.401.844</a></p>
+      <p class="contacte-data">Email: <a href="mailto:judithg@outlook.com">judithg@outlook.com</a></p>
+      <br>
+      <p style="color: var(--grey-text); font-size:0.9rem;">O deixa'm un missatge aquí:</p>
+    </div>
+
+    <div>
+      <!--
+        INSTRUCCIONS PER AL FORMULARI:
+        1. Ves a https://formspree.io i crea un compte gratuït
+        2. Crea un nou formulari per a l'email judithg@outlook.com
+        3. Substitueix "YOUR_FORM_ID" per l'ID que et dona Formspree (ex: xyzabc123)
+      -->
+      <form
+        class="contacte-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        id="contact-form"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required placeholder="El teu nom"/>
+          </div>
+          <div class="form-group">
+            <label for="cognoms">Cognoms *</label>
+            <input type="text" id="cognoms" name="cognoms" required placeholder="Els teus cognoms"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="correu@exemple.com"/>
+        </div>
+        <div class="form-group">
+          <label for="missatge">Missatge *</label>
+          <textarea id="missatge" name="missatge" required placeholder="El teu missatge..."></textarea>
+        </div>
+        <button type="submit" class="btn-form">Enviar</button>
+        <div class="form-success" id="form-success">
+          ✓ Missatge enviat! Et respondré aviat.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 by Judith Gutiérrez</p>
+    <div class="footer-social">
+      <a href="#" aria-label="Twitter">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.633 5.905-5.633z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+    // Formspree AJAX submission per evitar redirecció
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            success.style.display = 'block';
+          }
+        } catch(err) {
+          alert('Hi ha hagut un error. Envia\'m un email directament a judithg@outlook.com');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
