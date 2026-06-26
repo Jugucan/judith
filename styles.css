@@ -375,11 +375,15 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 @media (max-width: 780px){
   .coffee__inner{ grid-template-columns: 1fr; text-align:center; }
   .coffee__art svg{ max-width:170px; }
+  .coffee__text p{ margin-left:auto; margin-right:auto; }
+}
 
-   @media (max-width: 860px){
+@media (max-width: 860px){
   .marquee__track{
     animation-duration: 28s;
+    animation-play-state: running !important;
   }
-}
-  .coffee__text p{ margin-left:auto; margin-right:auto; }
+  .coffee__art .steam{
+    animation-play-state: running !important;
+  }
 }
