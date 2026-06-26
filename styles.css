@@ -332,6 +332,10 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1; transform:none}
+   
+   #contacte{
+    scroll-margin-top: 70px;
+  }   
 }
 
 /* ============ CAFÈ ============ */
