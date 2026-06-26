@@ -71,9 +71,3 @@ if (favicon) {
       favicon.href = "favicon.svg?v=" + new Date().getTime(); // Afegim una versió perquè esborri la cache en clar
     }
   };
-
-  // Escitem si l'usuari canvia entre mode clar i fosc
-  darkModeMediaQuery.addEventListener('change', (e) => setWhiteFavicon(e.matches));
-  // Ho comprovem de segones en carregar la pàgina
-  setWhiteFavicon(darkModeMediaQuery.matches);
-}
