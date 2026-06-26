@@ -325,8 +325,9 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 }
 
 @media (prefers-reduced-motion: reduce){
-  *{animation:none !important; transition:none !important}
   .reveal{opacity:1; transform:none}
+  .marquee__track{animation:none !important}
+  .steam{animation:none !important}
 }
 
 /* ============ CAFÈ ============ */
@@ -374,5 +375,11 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 @media (max-width: 780px){
   .coffee__inner{ grid-template-columns: 1fr; text-align:center; }
   .coffee__art svg{ max-width:170px; }
+
+   @media (max-width: 860px){
+  .marquee__track{
+    animation-duration: 28s;
+  }
+}
   .coffee__text p{ margin-left:auto; margin-right:auto; }
 }
