@@ -450,3 +450,13 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
     animation-play-state: running !important;
   }
 }
+
+/* ============ CONTROL INTEL·LIGENT DEL FAVICON ============ */
+
+/* Quan el navegador estigui en mode fosc... */
+@media (prefers-color-scheme: dark) {
+  /* ...busquem la icona SVG i forcem que el seu contingut es torni blanc */
+  link[rel="icon"][href*="favicon.svg"] {
+    filter: invert(1) brightness(2);
+  }
+}
