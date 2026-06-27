@@ -350,7 +350,7 @@
     </div>
   </section>
 
-  <!-- ============ JOC (EASTER EGG PANTALLA COMPLETA) ============ -->
+  <!-- ============ JOC (PANTALLA GRAN I AMB NÚVOLS) ============ -->
   <section id="joc" class="section section--alt">
     <div class="container">
       <div class="section__head">
@@ -359,11 +359,18 @@
       </div>
       <p class="game-intro" data-key="game-intro">Ajuda'm a esquivar els obstacles del camí. Prem l'espai o clica la pantalla per saltar!</p>
 
+      <!-- El joc contingut dins dels marges de la web -->
       <div id="gameBox" class="game-box">
+        <!-- Contenidor per als núvols (al fons) -->
+        <div id="cloudContainer"></div>
+
+        <!-- Personatge -->
         <div id="player" class="player">🚴‍♀️</div>
         
+        <!-- Contenidor dinàmic d'obstacles (al davant) -->
         <div id="obstacleContainer"></div>
         
+        <!-- Pantalla de inici/final -->
         <div id="gameOverScreen" class="game-overlay">
           <span id="gameMessage" data-key="game-start-msg">Prem "Començar" per jugar</span>
           <button id="startGameBtn" class="btn btn--primary" data-key="game-btn">Començar</button>
