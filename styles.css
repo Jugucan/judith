@@ -458,3 +458,52 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
     animation-play-state: running !important;
   }
 }
+
+/* =====================================================
+   BOTÓ TORNAR A DALT (BACK TO TOP)
+   ===================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--ink); /* El teu color fosc elegant */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%; /* Rodó perfecte */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 99; /* Per sobre de tot */
+  
+  /* Efecte de desaparició per defecte */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+}
+
+/* Icona de la fletxa a dins */
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Quan estigui actiu (es mostrarà des de JavaScript) */
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Efecte visual en PC (Hover) i Mòbil (Active) */
+.back-to-top:hover {
+  background-color: var(--accent); /* Es torna magenta al passar el ratolí! */
+  transform: scale(1.05);
+}
+.back-to-top:active {
+  transform: scale(0.95);
+}
