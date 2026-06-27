@@ -576,80 +576,72 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   }
 }
 /* =====================================================
-   ESTILS DEL JOC MINI BTT RUNNER
+   ESTILS DEL JOC MINI BTT RUNNER (PANTALLA GRAN)
    ===================================================== */
-.game-container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.game-intro {
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  color: #666;
+.game-full-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 30px 0;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .game-box {
   width: 100%;
-  height: 150px;
-  background: #f0f0f0;
-  border: 2px solid #111;
-  border-radius: 12px;
+  max-width: 900px; /* Pantalla molt més gran i allargada */
+  height: 220px;     /* Més alçada per tenir millor visió del salt */
+  background: #f7f7f7;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-/* El terra de la pista */
+/* El terra de la pista de BTT */
 .game-box::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 15px;
-  background: #ddd;
+  height: 25px;
+  background: #e5e5e5;
   border-top: 2px solid #111;
 }
 
+/* La ciclista ja no va marxa enrere! */
 .player {
-  font-size: 32px;
+  font-size: 42px; /* Un xic més gran */
   position: absolute;
-  bottom: 15px;
-  left: 40px;
-  transition: bottom 0.05s ease;
+  bottom: 23px;
+  left: 80px; /* Un poc més separada de la paret */
   z-index: 2;
+  transform: scaleX(-1); /* Girem l'emoji horitzontalment perquè miri a la dreta 👉 */
+  transition: bottom 0.05s ease;
 }
 
-/* Animació de salt */
+/* Animació de salt calibrada per la nova alçada */
 .player.jump {
-  animation: jumpAnim 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: jumpAnim 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @keyframes jumpAnim {
-  0% { bottom: 15px; }
-  50% { bottom: 90px; }
-  100% { bottom: 15px; }
+  0% { bottom: 23px; }
+  45% { bottom: 135px; } /* Salta més alt */
+  100% { bottom: 23px; }
 }
 
-.obstacle {
-  font-size: 24px;
+/* Obstacles generats dinàmicament */
+.dynamic-obstacle {
+  font-size: 28px;
   position: absolute;
-  bottom: 15px;
+  bottom: 23px;
   left: 100%;
   z-index: 2;
-  display: none; /* Amagat fins que comença */
-}
-
-.move-obstacle {
-  display: block;
-  animation: obstacleMove 1.8s linear infinite;
-}
-
-@keyframes obstacleMove {
-  0% { left: 100%; }
-  100% { left: -30px; }
 }
 
 /* Pantalla de Game Over / Inici */
@@ -659,27 +651,29 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   z-index: 10;
 }
 
 .game-overlay span {
   font-family: 'Fraunces', serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #111;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .game-score {
-  margin-top: 15px;
-  font-size: 1.1rem;
+  margin-top: 20px;
+  font-size: 1.2rem;
 }
 .game-score strong {
-  color: var(--accent);
-  font-size: 1.3rem;
+  color: var(--accent, #e65f2b);
+  font-size: 1.6rem;
 }
