@@ -582,7 +582,7 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   width: 100%;
   max-width: 650px; /* Aliniat i contingut dins dels marges de la web */
   height: 320px;     /* Molt més alt, dona sensació de pantalla de joc real */
-  background: #f7f7f7;
+  background: #eef7fc; /* Un blau cel pastel molt suau i elegant */
   border: 2px solid #111;
   margin: 0 auto 20px auto;
   border-radius: 16px;
@@ -639,7 +639,7 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   font-size: 34px;
   position: absolute;
   z-index: 1; /* Per darrere de la ciclista i els obstacles */
-  opacity: 0.4; /* Suaus perquè no distreguin de les pedres */
+  opacity: 0.7; /* Una mica més opacs perquè ressaltin sobre el blau cel */
   pointer-events: none; /* Que el ratolí els ignori completament */
 }
 
