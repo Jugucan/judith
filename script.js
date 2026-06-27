@@ -2,29 +2,31 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Menú mòbil (Corregit amb suport tàctil universal)
+// Menú mòbil (Corregit amb retard de seguretat per a l'scroll)
 const burger = document.querySelector('.nav__burger');
 const menu = document.querySelector('.nav nav');
 
 if (burger && menu) {
   const toggleMenu = (e) => {
-    e.preventDefault(); // Evita que el mòbil dupliqui l'acció de tocar i clicar
+    e.preventDefault(); 
     const open = menu.classList.toggle('is-open');
     burger.setAttribute('aria-expanded', open);
   };
 
-  // Reacciona tant al clic de ratolí com al toc del dit al mòbil instantàniament
   burger.addEventListener('click', toggleMenu);
   burger.addEventListener('touchstart', toggleMenu, { passive: false });
 
-  // Tancar el menú quan es clica o toca un enllaç a dins
+  // Controlar el clic als enllaços per no marejar l'scroll
   menu.querySelectorAll('a').forEach(a => {
-    const closeMenu = () => {
-      menu.classList.remove('is-open');
-      burger.setAttribute('aria-expanded', 'false');
-    };
-    a.addEventListener('click', closeMenu);
-    a.addEventListener('touchstart', closeMenu, { passive: true });
+    a.addEventListener('click', (e) => {
+      // Deixem que el navegador comenci a fer l'scroll cap a la secció...
+      
+      // I esperem 300 mil·lisegons (un sospir) abans de tancar la cortina del menú
+      setTimeout(() => {
+        menu.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+      }, 300);
+    });
   });
 }
 
