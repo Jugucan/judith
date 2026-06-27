@@ -250,6 +250,7 @@ const gameOverScreen = document.getElementById('gameOverScreen');
 const gameMessage = document.getElementById('gameMessage');
 const startGameBtn = document.getElementById('startGameBtn');
 const scoreVal = document.getElementById('scoreVal');
+const treeContainer = document.getElementById('treeContainer'); // Nou
 
 let isJumping = false;
 let isPlaying = false;
@@ -260,6 +261,8 @@ let cloudTimeout;
 let activeObstacles = [];
 let activeClouds = [];
 let currentSpeed = 6;
+let treeTimeout; // Nou
+let activeTrees = []; // Nou
 
 function jump() {
   if (isJumping || !isPlaying) return;
@@ -281,6 +284,34 @@ document.addEventListener('keydown', (e) => {
 });
 if (gameBox) {
   gameBox.addEventListener('click', jump);
+}
+
+// GENERADOR D'ARBRES DE FONS (Nou!)
+function spawnTree() {
+  if (!isPlaying || !gameBox) return;
+
+  const trees = ['🌲', '🌳', '🌴']; // Varietat forestal (la palmera per si corres per la costa!)
+  const chosenTree = trees[Math.floor(Math.random() * trees.length)];
+
+  const tree = document.createElement('div');
+  tree.className = 'dynamic-tree';
+  tree.textContent = chosenTree;
+  
+  // Mida aleatòria per fer el bosc més orgànic
+  const randomSize = Math.random() * (36 - 24) + 24;
+  tree.style.fontSize = randomSize + 'px';
+  
+  tree.style.left = gameBox.offsetWidth + 'px';
+  
+  // Velocitat constant de fons (més lenta que les pedres per fer l'efecte profunditat)
+  tree.dataset.speed = 3.5; 
+
+  if (treeContainer) treeContainer.appendChild(tree);
+  activeTrees.push(tree);
+
+  // Un arbre nou cada 1.5 o 4 segons
+  const nextTreeTime = Math.random() * (4000 - 1500) + 1500;
+  treeTimeout = setTimeout(spawnTree, nextTreeTime);
 }
 
 // GENERADOR DE NÚVOLS
@@ -345,6 +376,19 @@ function updateGame() {
     }
   }
 
+  // 1.2 Moure arbres (Nou!)
+  for (let i = activeTrees.length - 1; i >= 0; i--) {
+    const tree = activeTrees[i];
+    let treeLeft = parseFloat(tree.style.left);
+    treeLeft -= parseFloat(tree.dataset.speed);
+    tree.style.left = treeLeft + 'px';
+
+    if (treeLeft < -50) {
+      tree.remove();
+      activeTrees.splice(i, 1);
+    }
+  }
+
   // 2. Moure obstacles i comprovar col·lisions
   if (player) {
     const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
@@ -379,9 +423,11 @@ function startGame() {
   currentSpeed = 6;
   activeObstacles = [];
   activeClouds = [];
+  activeTrees = []; // Afegeix sota activeClouds = [];
   
   if (obstacleContainer) obstacleContainer.innerHTML = '';
   if (cloudContainer) cloudContainer.innerHTML = '';
+  if (treeContainer) treeContainer.innerHTML = ''; // Afegeix sota cloudContainer
   if (scoreVal) scoreVal.textContent = score;
   if (gameOverScreen) gameOverScreen.style.display = 'none';
   
@@ -394,6 +440,7 @@ function startGame() {
     }
   }, 50);
 
+  spawnTree();
   spawnObstacle();
   spawnCloud();
   requestAnimationFrame(updateGame);
@@ -404,6 +451,7 @@ function endGame() {
   clearInterval(scoreInterval);
   clearTimeout(obstacleTimeout);
   clearTimeout(cloudTimeout);
+  clearTimeout(treeTimeout); // Afegeix sota clearTimeout(cloudTimeout);
   
   const currentLang = document.documentElement.lang || 'ca';
   const msgText = translations[currentLang]['game-over-msg'];
