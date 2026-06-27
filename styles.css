@@ -507,3 +507,24 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
 .back-to-top:active {
   transform: scale(0.95);
 }
+
+/* =====================================================
+   ESTIL PER A LA SECCIÓ ACTIVA DEL MENÚ (PC)
+   ===================================================== */
+@media (min-width: 769px) {
+  /* Quan la secció estigui activa, el text es torna magenta elegant */
+  .nav nav a.active {
+    color: var(--accent) !important;
+    font-weight: 600;
+  }
+
+  /* Fem que la línia decorativa de sota es quedi completament fixada i visible */
+  .nav nav a.active::after {
+    content: '';
+    display: block;
+    width: 20px; /* La mateixa mida que tenies al hover */
+    height: 1px;
+    background: var(--accent);
+    margin: 4px auto 0;
+  }
+}
