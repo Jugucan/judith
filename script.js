@@ -62,6 +62,12 @@ const translations = {
     "coffee-btn": "Sí, prenem-lo →",
     "title-contacte": "Contacte", "contact-lead": "L'èxit és qüestió de trobar les persones adequades en el moment oportú. Potser aquest és el nostre moment? Provem-ho. 😉",
     "contact-mail": "Email", "contact-phone": "Telèfon", "footer-text": "Judith Gutiérrez · Fet amb cura"
+    "game-title": "Un petit descans? 🚴‍♀️",
+    "game-intro": "Ajuda'm a esquivar els obstacles del camí. Prem l'espai o clica la pantalla per saltar!",
+    "game-start-msg": "Prem \"Començar\" per jugar",
+    "game-btn": "Començar",
+    "game-score-label": "Punts:",
+    "game-over-msg": "💥 Oh no! Has topat amb un obstacle.",
   },
   es: {
     "meta-title": "Judith Gutiérrez — Gestión digital · Fitness · BTT",
@@ -123,6 +129,12 @@ const translations = {
     "coffee-btn": "Sí, tomémoslo →",
     "title-contacte": "Contacto", "contact-lead": "El éxito es cuestión de encontrar a las personas adecuadas en el momento oportuno. ¿Quizás este sea nuestro momento? Probemos. 😉",
     "contact-mail": "Email", "contact-phone": "Teléfono", "footer-text": "Judith Gutiérrez · Hecho con mimo"
+    "game-title": "¿Un pequeño descanso? 🚴‍♀️",
+    "game-intro": "Ayúdame a esquivar los obstáculos del camino. ¡Pulsa el espacio o clica la pantalla para saltar!",
+    "game-start-msg": "Pulsa \"Comenzar\" para jugar",
+    "game-btn": "Comenzar",
+    "game-score-label": "Puntos:",
+    "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo.",
   }
 };
 
@@ -226,3 +238,85 @@ if (backToTopBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+// =====================================================
+// JOC: BTT RUNNER
+// =====================================================
+const player = document.getElementById('player');
+const obstacle = document.getElementById('obstacle');
+const gameBox = document.getElementById('gameBox');
+const gameOverScreen = document.getElementById('gameOverScreen');
+const gameMessage = document.getElementById('gameMessage');
+const startGameBtn = document.getElementById('startGameBtn');
+const scoreVal = document.getElementById('scoreVal');
+
+let isJumping = false;
+let isPlaying = false;
+let score = 0;
+let gameLoopInterval;
+let scoreInterval;
+
+function jump() {
+  if (isJumping || !isPlaying) return;
+  isJumping = true;
+  player.classList.add('jump');
+  
+  // S'elimina la classe un cop acaba l'animació (500ms)
+  setTimeout(() => {
+    player.classList.remove('jump');
+    isJumping = false;
+  }, 500);
+}
+
+// Controls: Espai per saltar o clic a la pantalla del joc
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space') {
+    e.preventDefault(); // Evita que la pàgina baixi
+    jump();
+  }
+});
+gameBox.addEventListener('click', jump);
+
+function startGame() {
+  isPlaying = true;
+  score = 0;
+  scoreVal.textContent = score;
+  gameOverScreen.style.display = 'none';
+  obstacle.classList.add('move-obstacle');
+  
+  // Comptador de punts
+  scoreInterval = setInterval(() => {
+    score++;
+    scoreVal.textContent = score;
+  }, 100);
+
+  // Comprovació de col·lisions
+  gameLoopInterval = setInterval(() => {
+    const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
+    const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
+    const boxWidth = gameBox.offsetWidth;
+
+    // Ajust de zona de col·lisió simulat
+    if (obstacleLeft > 40 && obstacleLeft < 80 && playerBottom <= 35) {
+      endGame();
+    }
+  }, 10);
+}
+
+function endGame() {
+  isPlaying = false;
+  clearInterval(gameLoopInterval);
+  clearInterval(scoreInterval);
+  obstacle.classList.remove('move-obstacle');
+  
+  // Missatge final segons l'idioma actiu
+  const currentLang = document.documentElement.lang || 'ca';
+  gameMessage.innerHTML = `${translations[currentLang]['game-over-msg']}<br><span style="font-size:16px;">Score: ${score}</span>`;
+  startGameBtn.textContent = currentLang === 'ca' ? 'Tornar a jugar' : 'Volver a jugar';
+  
+  gameOverScreen.style.display = 'flex';
+}
+
+startGameBtn.addEventListener('click', (e) => {
+  e.stopPropagation(); // Evita que es dispari el salt al clicar el botó
+  startGame();
+});
