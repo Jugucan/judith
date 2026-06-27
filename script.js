@@ -30,41 +30,53 @@ if (burger && menu) {
   });
 }
 
-// Reveal en scroll
-const io = new IntersectionObserver((entries) => {
+// =====================================================
+// REVEAL EN SCROLL + MENÚ ACTIU DINÀMIC (SCROLLSPY)
+// =====================================================
+const menuLinks = document.querySelectorAll('.nav nav a');
+const sections = document.querySelectorAll('.section');
+
+const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
+    // 1. Efecte Reveal original (fa aparèixer la secció)
     if (e.isIntersecting) {
       e.target.classList.add('is-visible');
-      io.unobserve(e.target);
+    }
+
+    // 2. Control del Menú Actiu
+    // Fem servir un llindar una mica més estricte per assegurar-nos que la secció ocupa bona part de la pantalla
+    if (e.isIntersecting && e.intersectionRatio > 0.3) {
+      const currentId = e.target.getAttribute('id');
+      
+      // Treiem la classe 'active' de tots els enllaços del menú
+      menuLinks.forEach(link => link.classList.remove('active'));
+      
+      // Busquem l'enllaç que apunta a aquesta secció concreta i li col·loquem la classe 'active'
+      const activeLink = document.querySelector(`.nav nav a[href="#${currentId}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
     }
   });
-}, { threshold: 0.12 });
+}, { 
+  // Rango de detecció optimitzat: demanem que es detecti quan estigui a prop del centre de la pantalla
+  rootMargin: "-20% 0px -40% 0px",
+  threshold: [0.12, 0.4] 
+});
 
-document.querySelectorAll('.section, .hero__text, .hero__photo, .timeline li, .card')
-  .forEach(el => { 
-    el.classList.add('reveal'); 
-    io.observe(el); 
-  });
+// Activem l'observador per a totes les teves seccions principals
+sections.forEach(sec => scrollObserver.observe(sec));
 
-// Botó Tornar a dalt
-const backToTopBtn = document.getElementById('backToTop');
-
-if (backToTopBtn) {
-  // Escitem l'scroll de la pàgina
-  window.addEventListener('scroll', () => {
-    // Si l'usuari ha baixat més de 400 píxels, ensenyem el botó, si no, l'asguem
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add('is-visible');
-    } else {
-      backToTopBtn.classList.remove('is-visible');
-    }
-  });
-
-  // Quan es fa clic al botó
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Puja lliscant de manera suau i elegant
+// Apliquem el reveal original també als elements petits del hero i les targetes
+document.querySelectorAll('.hero__text, .hero__photo, .timeline li, .card').forEach(el => {
+  el.classList.add('reveal');
+  // Creem un micro-observador només visual per a ells per no barrejar-ho amb el menú
+  new IntersectionObserver((entries, self) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        self.unobserve(e.target);
+      }
     });
-  });
-}
+  }, { threshold: 0.12 }).observe(el);
+});
