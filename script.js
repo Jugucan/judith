@@ -240,11 +240,12 @@ if (backToTopBtn) {
 }
 
 // =====================================================
-// NOU MOTOR DE JOC: BTT RUNNER IMPREDICTIBLE I EVOLUTIU
+// MOTOR DE JOC: BTT RUNNER AMB NÚVOLS DINÀMICS
 // =====================================================
 const player = document.getElementById('player');
 const gameBox = document.getElementById('gameBox');
 const obstacleContainer = document.getElementById('obstacleContainer');
+const cloudContainer = document.getElementById('cloudContainer'); // Nou
 const gameOverScreen = document.getElementById('gameOverScreen');
 const gameMessage = document.getElementById('gameMessage');
 const startGameBtn = document.getElementById('startGameBtn');
@@ -254,9 +255,11 @@ let isJumping = false;
 let isPlaying = false;
 let score = 0;
 let scoreInterval;
-let obstacleTimeout; // Controla quan apareix el pròxim obstacle
-let activeObstacles = []; // Llista per controlar les pedres en pantalla
-let currentSpeed = 5; // Velocitat inicial dels obstacles
+let obstacleTimeout;
+let cloudTimeout; // Nou: Controla el temps entre núvols
+let activeObstacles = [];
+let activeClouds = []; // Nou: Llista per moure els núvols
+let currentSpeed = 6;
 
 function jump() {
   if (isJumping || !isPlaying) return;
@@ -266,7 +269,7 @@ function jump() {
   setTimeout(() => {
     player.classList.remove('jump');
     isJumping = false;
-  }, 600); // Batuda una mica més llarga pel nou salt
+  }, 650);
 }
 
 // Controls de salt
@@ -280,11 +283,39 @@ if (gameBox) {
   gameBox.addEventListener('click', jump);
 }
 
-// Generador aleatori d'obstacles
+// GENERADOR DE NÚVOLS (Nou!)
+function spawnCloud() {
+  if (!isPlaying) return;
+
+  const clouds = ['☁️', '⛅', '💨'];
+  const chosenCloud = clouds[Math.floor(Math.random() * clouds.length)];
+
+  const cloud = document.createElement('div');
+  cloud.className = 'dynamic-cloud';
+  cloud.textContent = chosenCloud;
+  
+  // Posició inicial: just a la dreta de la pantalla
+  cloud.style.left = gameBox.offsetWidth + 'px';
+  
+  // Alçada aleatòria per la meitat superior de la pantalla (entre 120px i 240px del terra)
+  const randomTop = Math.random() * (120 - 20) + 20;
+  cloud.style.top = randomTop + 'px';
+  
+  // Velocitat pròpia del núvol (més lenta que el terra per donar sensació de distància)
+  cloud.dataset.speed = Math.random() * (2.5 - 1) + 1;
+
+  if (cloudContainer) cloudContainer.appendChild(cloud);
+  activeClouds.push(cloud);
+
+  // Un nou núvol cada 3 o 6 segons
+  const nextCloudTime = Math.random() * (6000 - 3000) + 3000;
+  cloudTimeout = setTimeout(spawnCloud, nextCloudTime);
+}
+
+// GENERADOR D'OBSTACLES
 function spawnObstacle() {
   if (!isPlaying) return;
 
-  // Varietat d'obstacles de muntanya
   const obstacleTypes = ['🪨', '🪵', '🌿', '🪨🪨'];
   const chosenType = obstacleTypes[Math.floor(Math.random() * obstacleTypes.length)];
 
@@ -292,21 +323,32 @@ function spawnObstacle() {
   obs.className = 'dynamic-obstacle';
   obs.textContent = chosenType;
   obs.style.left = gameBox.offsetWidth + 'px';
-  obstacleContainer.appendChild(obs);
+  if (obstacleContainer) obstacleContainer.appendChild(obs);
 
-  // Guardem l'objecte a la nostra llista de control de col·lisions
   activeObstacles.push(obs);
 
-  // Programem el següent obstacle amb un temps totalment aleatori (entre 1.2 i 3 segons)
-  // Això fa que a vegades surtin dues pedres gairebé juntes o triguin molt més!
   const nextSpawnTime = Math.random() * (3000 - 1200) + 1200;
   obstacleTimeout = setTimeout(spawnObstacle, nextSpawnTime);
 }
 
-// Motor de moviment i col·lisions (Calibrat per a pantalla alta)
+// MOTOR PRINCIPAL (ACTUALITZAT)
 function updateGame() {
   if (!isPlaying) return;
 
+  // 1. Moure núvols (Nou!)
+  for (let i = activeClouds.length - 1; i >= 0; i--) {
+    const cloud = activeClouds[i];
+    let cloudLeft = parseFloat(cloud.style.left);
+    cloudLeft -= parseFloat(cloud.dataset.speed);
+    cloud.style.left = cloudLeft + 'px';
+
+    if (cloudLeft < -60) {
+      cloud.remove();
+      activeClouds.splice(i, 1);
+    }
+  }
+
+  // 2. Moure obstacles i comprovar col·lisions
   const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
   const playerLeft = 60; 
   const playerWidth = 35;
@@ -318,7 +360,6 @@ function updateGame() {
     obsLeft -= currentSpeed;
     obs.style.left = obsLeft + 'px';
 
-    // Detecció de col·lisió adaptada al nou terra i alçada de salt
     if (obsLeft > playerLeft && obsLeft < (playerLeft + playerWidth) && playerBottom <= 55) {
       endGame();
       return;
@@ -336,25 +377,26 @@ function updateGame() {
 function startGame() {
   isPlaying = true;
   score = 0;
-  currentSpeed = 6; // Velocitat base
+  currentSpeed = 6;
   activeObstacles = [];
-  if (obstacleContainer) obstacleContainer.innerHTML = ''; // Esborrem pedres velles
+  activeClouds = []; // Nou
+  
+  if (obstacleContainer) obstacleContainer.innerHTML = '';
+  if (cloudContainer) cloudContainer.innerHTML = ''; // Nou
   if (scoreVal) scoreVal.textContent = score;
   if (gameOverScreen) gameOverScreen.style.display = 'none';
   
-  // Incrementar punts i pujar la dificultat progressivament
   scoreInterval = setInterval(() => {
     score++;
     if (scoreVal) scoreVal.textContent = score;
 
-    // Cada 100 punts, la bicicleta accelera el ritme!
     if (score % 100 === 0) {
       currentSpeed += 0.8;
     }
-  }, 50); // Punts una mica més dinàmics
+  }, 50);
 
-  // Iniciem generació d'obstacles i bucle de renderitzat físic
   spawnObstacle();
+  spawnCloud(); // Nou: activem els núvols al començar
   requestAnimationFrame(updateGame);
 }
 
@@ -362,6 +404,7 @@ function endGame() {
   isPlaying = false;
   clearInterval(scoreInterval);
   clearTimeout(obstacleTimeout);
+  clearTimeout(cloudTimeout); // Nou
   
   const currentLang = document.documentElement.lang || 'ca';
   const msgText = translations[currentLang]['game-over-msg'];
@@ -378,5 +421,7 @@ if (startGameBtn) {
   startGameBtn.addEventListener('click', (e) => {
     e.stopPropagation(); 
     startGame();
+  });
+}
   });
 }
