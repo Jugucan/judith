@@ -297,8 +297,8 @@ function spawnTree() {
   tree.className = 'dynamic-tree';
   tree.textContent = chosenTree;
   
-  // Mida aleatòria per fer el bosc més orgànic
-  const randomSize = Math.random() * (36 - 24) + 24;
+  // Arbres molt més grans pel fons de la muntanya
+  const randomSize = Math.random() * (75 - 55) + 55;
   tree.style.fontSize = randomSize + 'px';
   
   tree.style.left = gameBox.offsetWidth + 'px';
