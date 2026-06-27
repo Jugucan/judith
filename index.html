@@ -351,34 +351,26 @@
   </section>
 
   <!-- ============ JOC (EASTER EGG PANTALLA COMPLETA) ============ -->
-  <section id="joc" class="section section--alt" style="padding-left: 0; padding-right: 0;">
+  <section id="joc" class="section section--alt">
     <div class="container">
-      <div class="section__head" style="padding-0 20px;">
+      <div class="section__head">
         <span class="num">4.5</span>
         <h2 data-key="game-title">Un petit descans? 🚴‍♀️</h2>
       </div>
-      <p class="game-intro" data-key="game-intro" style="padding: 0 20px; margin-bottom: 24px;">Ajuda'm a esquivar els obstacles del camí. Prem l'espai o clica la pantalla per saltar!</p>
-    </div>
+      <p class="game-intro" data-key="game-intro">Ajuda'm a esquivar els obstacles del camí. Prem l'espai o clica la pantalla per saltar!</p>
 
-    <!-- Contenidor que agafa tot l'amplada -->
-    <div class="game-full-wrapper">
       <div id="gameBox" class="game-box">
-        <!-- Personatge girat mirant a la dreta (👉) -->
         <div id="player" class="player">🚴‍♀️</div>
         
-        <!-- Contenidor dinàmic on anirem creant els obstacles amb JS -->
         <div id="obstacleContainer"></div>
         
-        <!-- Pantalla de inici/final -->
         <div id="gameOverScreen" class="game-overlay">
           <span id="gameMessage" data-key="game-start-msg">Prem "Començar" per jugar</span>
           <button id="startGameBtn" class="btn btn--primary" data-key="game-btn">Començar</button>
         </div>
       </div>
-    </div>
-    
-    <div class="container" style="text-align: center;">
-      <div class="game-score">
+      
+      <div class="game-score" style="text-align: center;">
         <span data-key="game-score-label">Punts:</span> <strong id="scoreVal">0</strong>
       </div>
     </div>
