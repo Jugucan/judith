@@ -634,6 +634,15 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   z-index: 2;
 }
 
+/* Núvols decoratius de fons */
+.dynamic-cloud {
+  font-size: 34px;
+  position: absolute;
+  z-index: 1; /* Per darrere de la ciclista i els obstacles */
+  opacity: 0.4; /* Suaus perquè no distreguin de les pedres */
+  pointer-events: none; /* Que el ratolí els ignori completament */
+}
+
 /* Pantalla de Game Over / Inici */
 .game-overlay {
   position: absolute;
