@@ -136,21 +136,6 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   background:#21c55d; border-radius:50%; margin-right:8px;
   box-shadow:0 0 0 4px rgba(33,197,93,.18);
 }
-/* Estils per a que el botó de disponible sembli i sigui clicable */
-.hero__badge-link {
-  text-decoration: none; /* Treu la línia típica dels enllaços */
-  display: inline-block;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.hero__badge-link:hover {
-  transform: translateY(-2px); /* Fa un petit saltet cap a dalt en passar el ratolí */
-  opacity: 0.9; /* Es torna un polsim més transparent */
-}
-
-.hero__badge {
-  cursor: pointer; /* Assegura que surti la maneta de clicar */
-}
 
 /* ============ MARQUEE ============ */
 .marquee{
