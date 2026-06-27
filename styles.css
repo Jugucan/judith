@@ -575,3 +575,111 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
     padding: 8px 12px;
   }
 }
+/* =====================================================
+   ESTILS DEL JOC MINI BTT RUNNER
+   ===================================================== */
+.game-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-intro {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.game-box {
+  width: 100%;
+  height: 150px;
+  background: #f0f0f0;
+  border: 2px solid #111;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* El terra de la pista */
+.game-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: #ddd;
+  border-top: 2px solid #111;
+}
+
+.player {
+  font-size: 32px;
+  position: absolute;
+  bottom: 15px;
+  left: 40px;
+  transition: bottom 0.05s ease;
+  z-index: 2;
+}
+
+/* Animació de salt */
+.player.jump {
+  animation: jumpAnim 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes jumpAnim {
+  0% { bottom: 15px; }
+  50% { bottom: 90px; }
+  100% { bottom: 15px; }
+}
+
+.obstacle {
+  font-size: 24px;
+  position: absolute;
+  bottom: 15px;
+  left: 100%;
+  z-index: 2;
+  display: none; /* Amagat fins que comença */
+}
+
+.move-obstacle {
+  display: block;
+  animation: obstacleMove 1.8s linear infinite;
+}
+
+@keyframes obstacleMove {
+  0% { left: 100%; }
+  100% { left: -30px; }
+}
+
+/* Pantalla de Game Over / Inici */
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.game-overlay span {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.game-score {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+.game-score strong {
+  color: var(--accent);
+  font-size: 1.3rem;
+}
