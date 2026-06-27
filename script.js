@@ -17,13 +17,13 @@ const translations = {
     "hero-badge": "Disponible per a noves oportunitats",
     "m1": "Administració", "m2": "WordPress", "m3": "Assistent virtual", "m4": "Atenció al client", "m5": "Fitness", "m6": "Back office", "m7": "Iniciatives creatives",
     "title-sobremi": "Sobre mi",
-    "about-p1": "Sóc una professional versàtil amb més de <strong>20 anys d'experiència</strong> en el sector administratiu i digital, complementada amb formació en fitness i guiatge de BTT.",
+    "about-p1": "Sóc una professional versàtil amb adolescent més de <strong>20 anys d'experiència</strong> en el sector administratiu i digital, complementada amb formació en fitness i guiatge de BTT.",
     "about-p2": "La meva trajectòria reflecteix una constant inquietud per aprendre i evolucionar. Em caracteritzo per ser resolutiva, organitzada i amb una gran capacitat d'adaptació. La meva experiència en diferents sectors m'ha donat una visió integral dels processos i una habilitat especial per optimitzar recursos i implementar millores.",
-    "about-p3": "L'energia i la motivació són el meu segell, i el somriure i la passió, la meva identitat. Tant en una reunió com en una classe o sobre la bici, sempre busco que cada experiència sigui única, autèntica i plena de força.",
+    "about-p3": "L'energia i la motivació són el meu segell, i el somriure i la passió, la meva identitat. Tant en una reunió com en una classe o sobre la bici, always busco que cada experiència sigui única, autèntica i plena de força.",
     "title-experiencia": "Experiència",
     "cat-admin": "Sector administratiu i digital",
     "exp1-title": "Cofundadora i Administrativa · Rutatur",
-    "exp1-i1": "Gestió de licitacions públiques", "exp1-i2": "Administració de l'agència de viatges receptiva", "exp1-i3": "Desenvolupament i manteniment web", "exp1-i4": "Gestió financera i control d'ingressos i despeses",
+    "exp1-i1": "Gestió de licitacions públics", "exp1-i2": "Administració de l'agència de viatges receptiva", "exp1-i3": "Desenvolupament i manteniment web", "exp1-i4": "Gestió financera i control d'ingressos i despeses",
     "exp2-title": "Fundadora i Desenvolupadora · Neryou",
     "exp2-i1": "Disseny i implementació d'una app per dinamitzar el comerç local", "exp2-i2": "Creació d'interfície per connectar usuaris amb empreses locals", "exp2-i3": "Gestió de la plataforma digital i relacions amb empreses col·laboradores",
     "exp3-title": "Auxiliar de Parafarmàcia",
@@ -53,11 +53,11 @@ const translations = {
     "sk-h1": "Administratives", "sk-h2": "Digitals", "sk-h3": "Personals",
     "sk-a1": "Gestió documental i arxiu", "sk-a2": "Comptabilitat i control pressupostari", "sk-a3": "Atenció al client multicanal", "sk-a4": "Resolució d'incidències", "sk-a5": "Organització i planificació", "sk-a6": "Optimització de processos",
     "sk-d1": "Creació i manteniment web", "sk-d2": "Implementació de programes digitals", "sk-d3": "Gestió de bases de dades", "sk-d4": "Ofimàtica avançada", "sk-d5": "Digitalització de processos", "sk-d6": "Gestió de plataformes online",
-    "sk-p1": "Adaptabilitat i flexibilitat", "sk-p2": "Proactivitat i iniciativa", "sk-p3": "Aprenentatge continu", "sk-p4": "Treball en equipo", "sk-p5": "Comunicació efectiva", "sk-p6": "Atenció al detall",
+    "sk-p1": "Adaptabilitat i flexibilitat", "sk-p2": "Proactivitat i iniciativa", "sk-p3": "Aprenentatge continu", "sk-p4": "Treball en equip", "sk-p5": "Comunicació efectiva", "sk-p6": "Atenció al detall",
     "lang-ca": "Català", "lang-es": "Castellà", "lang-en": "Anglès", "lang-nat": "Natiu", "lang-bas": "Bàsic",
     "coffee-eyebrow": "Prenem-nos un cafè ☕", "coffee-title": "El millor camí comença amb un primer pas… o un <em>cafè</em>!",
     "coffee-p1": "Si has arribat fins aquí, potser és per curiositat, o potser perquè alguna cosa en mi t'ha cridat l'atenció. Sigui com sigui, només hi ha una manera de saber si encaixem: trobant-nos i parlant.",
-    "coffee-p2": "Res de discursos preparats ni formalismes pesats. Només un cafè, una estona compartida, una conversa autèntica i, qui sap, potser una d'aquelles trobades en les què val la pena haver perdut una mica el temps.",
+    "coffee-p2": "Res de discursos preparats ni formalismes pesats. Només un cafè, una estona compartida, una conversa autèntica i, qui sabat, potser una d'aquelles trobades en les què val la pena haver perdut una mica el temps.",
     "coffee-closing": "Tu poses el lloc i l'hora, jo porto l'energia i el somriure. <strong>Prenem aquest cafè?</strong> 😉",
     "coffee-btn": "Sí, prenem-lo →",
     "title-contacte": "Contacte", "contact-lead": "L'èxit és qüestió de trobar les persones adequades en el moment oportú. Potser aquest és el nostre moment? Provem-ho. 😉",
@@ -107,7 +107,7 @@ const translations = {
     "exp8-title": "Guía, Dinamizadora y Conductora de grupos de BTT · Rutatur",
     "exp8-i1": "Conducción de grupos en rutas de BTT de diferentes niveles", "exp8-i2": "Asesoramiento técnico y asistencia", "exp8-i3": "Dinamización de actividades y creación de experiencias personalizadas",
     "exp9-title": "Instructora y Monitora de BTT infantil · Rutatur",
-    "exp9-i1": "Planificación y conducción de sesiones de BTT para niños", "exp9-i2": "Enseñanza de técnicas básicas y seguridad en ciclismo", "exp9-i3": "Diseño y conducción de clases colectivas",
+    "exp9-i1": "Planificación y conducción de sesiones de BTT para niños", "exp9-i2": "Enseñanza de técnicas básicas y seguridad en ciclisme", "exp9-i3": "Diseño y conducción de clases colectivas",
     "exp10-title": "Instructora de Fitness y Actividades Dirigidas",
     "exp10-i1": "Clases de BODYCOMBAT, BODYPUMP, SH'BAM, BODYBALANCE y LES MILLS DANCE", "exp10-i2": "Elaboración de programas de entrenamiento grupales", "exp10-i3": "Planificación de sesiones adaptadas a diferentes niveles",
     "title-formacio": "Formación",
@@ -115,7 +115,7 @@ const translations = {
     "f2-title": "Técnico de Ciclismo Nivel 1", "f2-place": "Federació Catalana de Ciclisme · Escola Catalana de l'Esport · ROPEC 034811",
     "f3-title": "Certificado en Acondicionamiento Físico y Actividades Dirigidas", "f3-place": "European Sports and Health Institute (ESHI) · ROPEC",
     "cat-complementaria": "Formación complementaria",
-    "p1": "Primeros Auxilios (Laborali, 2021)", "p2": "Planificación y control de carga (ESHI, 2020)", "p3": "Mecanografía — 234 ppm (2011)", "p4": "Técnicas administrativas de oficina (2010)", "p5": "Informática, ofimática e Internet básico (2010)", "p6": "Comunicación, archivo y atención al cliente (2010)", "p7": "Aplicaciones administrativas y de gestión (2010)", "p8": "Empresa y gestión internacional (2010)", "p9": "Integración de aplicaciones de ofimática (2008)", "p10": "Excel y Ofimática (2007)", "p11": "Auxiliar de Farmacia (2014)", "p12": "Servicios estéticos, higiene, depilación y maquillaje (2014)",
+    "p1": "Primeros Auxilios (Laborali, 2021)", "p2": "Planificación y control de carga (ESHI, 2020)", "p3": "Mecanografía — 234 ppm (2011)", "p4": "Técnicas administrativas de oficina (2010)", "p5": "Informática, ofimática y Internet básico (2010)", "p6": "Comunicación, archivo y atención al cliente (2010)", "p7": "Aplicación administrativas y de gestión (2010)", "p8": "Empresa y gestión internacional (2010)", "p9": "Integración de aplicaciones de ofimática (2008)", "p10": "Excel y Ofimática (2007)", "p11": "Auxiliar de Farmacia (2014)", "p12": "Servicios estéticos, higiene, depilación y maquillaje (2014)",
     "title-habilitats": "Habilidades & idiomas",
     "sk-h1": "Administrativas", "sk-h2": "Digitales", "sk-h3": "Personales",
     "sk-a1": "Gestión documental y archivo", "sk-a2": "Contabilidad y control presupuestario", "sk-a3": "Atención al cliente multicanal", "sk-a4": "Resolución de incidencias", "sk-a5": "Organización y planificación", "sk-a6": "Optimización de procesos",
@@ -130,7 +130,7 @@ const translations = {
     "title-contacte": "Contacto", "contact-lead": "El éxito es cuestión de encontrar a las personas adecuadas en el momento oportuno. ¿Quizás este sea nuestro momento? Probemos. 😉",
     "contact-mail": "Email", "contact-phone": "Teléfono", "footer-text": "Judith Gutiérrez · Hecho con mimo",
     "game-title": "¿Un pequeño descanso? 🚴‍♀️",
-    "game-intro": "Ayúdame a esquivar los obstáculos del camino. ¡Pulsa el espacio o clica la pantalla para saltar!",
+    "game-intro": "Ayúdame a esquivar los obstáculos del camino. ¡Pulsa el espacio o clica la pantalla para jugar!",
     "game-start-msg": "Pulsa Comenzar para jugar",
     "game-btn": "Comenzar",
     "game-score-label": "Puntos:",
@@ -162,7 +162,7 @@ document.getElementById('btn-es')?.addEventListener('click', () => changeLanguag
 const savedLang = localStorage.getItem('idioma-preferit') || 'ca';
 changeLanguage(savedLang);
 
-// --- CONTROL DELS ALTRES SECCIONS DE LA WEB ---
+// --- CONTROL DE LES ALTRE SECCIONS DE LA WEB ---
 
 // Any al footer
 const yearEl = document.getElementById('year');
@@ -245,7 +245,7 @@ if (backToTopBtn) {
 const player = document.getElementById('player');
 const gameBox = document.getElementById('gameBox');
 const obstacleContainer = document.getElementById('obstacleContainer');
-const cloudContainer = document.getElementById('cloudContainer'); // Nou
+const cloudContainer = document.getElementById('cloudContainer');
 const gameOverScreen = document.getElementById('gameOverScreen');
 const gameMessage = document.getElementById('gameMessage');
 const startGameBtn = document.getElementById('startGameBtn');
@@ -256,18 +256,18 @@ let isPlaying = false;
 let score = 0;
 let scoreInterval;
 let obstacleTimeout;
-let cloudTimeout; // Nou: Controla el temps entre núvols
+let cloudTimeout;
 let activeObstacles = [];
-let activeClouds = []; // Nou: Llista per moure els núvols
+let activeClouds = [];
 let currentSpeed = 6;
 
 function jump() {
   if (isJumping || !isPlaying) return;
   isJumping = true;
-  player.classList.add('jump');
+  if (player) player.classList.add('jump');
   
   setTimeout(() => {
-    player.classList.remove('jump');
+    if (player) player.classList.remove('jump');
     isJumping = false;
   }, 650);
 }
@@ -283,9 +283,9 @@ if (gameBox) {
   gameBox.addEventListener('click', jump);
 }
 
-// GENERADOR DE NÚVOLS (Nou!)
+// GENERADOR DE NÚVOLS
 function spawnCloud() {
-  if (!isPlaying) return;
+  if (!isPlaying || !gameBox) return;
 
   const clouds = ['☁️', '⛅', '💨'];
   const chosenCloud = clouds[Math.floor(Math.random() * clouds.length)];
@@ -294,27 +294,23 @@ function spawnCloud() {
   cloud.className = 'dynamic-cloud';
   cloud.textContent = chosenCloud;
   
-  // Posició inicial: just a la dreta de la pantalla
   cloud.style.left = gameBox.offsetWidth + 'px';
   
-  // Alçada aleatòria per la meitat superior de la pantalla (entre 120px i 240px del terra)
   const randomTop = Math.random() * (120 - 20) + 20;
   cloud.style.top = randomTop + 'px';
   
-  // Velocitat pròpia del núvol (més lenta que el terra per donar sensació de distància)
   cloud.dataset.speed = Math.random() * (2.5 - 1) + 1;
 
   if (cloudContainer) cloudContainer.appendChild(cloud);
   activeClouds.push(cloud);
 
-  // Un nou núvol cada 3 o 6 segons
   const nextCloudTime = Math.random() * (6000 - 3000) + 3000;
   cloudTimeout = setTimeout(spawnCloud, nextCloudTime);
 }
 
 // GENERADOR D'OBSTACLES
 function spawnObstacle() {
-  if (!isPlaying) return;
+  if (!isPlaying || !gameBox) return;
 
   const obstacleTypes = ['🪨', '🪵', '🌿', '🪨🪨'];
   const chosenType = obstacleTypes[Math.floor(Math.random() * obstacleTypes.length)];
@@ -331,11 +327,11 @@ function spawnObstacle() {
   obstacleTimeout = setTimeout(spawnObstacle, nextSpawnTime);
 }
 
-// MOTOR PRINCIPAL (ACTUALITZAT)
+// MOTOR PRINCIPAL
 function updateGame() {
   if (!isPlaying) return;
 
-  // 1. Moure núvols (Nou!)
+  // 1. Moure núvols
   for (let i = activeClouds.length - 1; i >= 0; i--) {
     const cloud = activeClouds[i];
     let cloudLeft = parseFloat(cloud.style.left);
@@ -349,25 +345,27 @@ function updateGame() {
   }
 
   // 2. Moure obstacles i comprovar col·lisions
-  const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
-  const playerLeft = 60; 
-  const playerWidth = 35;
+  if (player) {
+    const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
+    const playerLeft = 60; 
+    const playerWidth = 35;
 
-  for (let i = activeObstacles.length - 1; i >= 0; i--) {
-    const obs = activeObstacles[i];
-    let obsLeft = parseInt(obs.style.left);
+    for (let i = activeObstacles.length - 1; i >= 0; i--) {
+      const obs = activeObstacles[i];
+      let obsLeft = parseInt(obs.style.left);
 
-    obsLeft -= currentSpeed;
-    obs.style.left = obsLeft + 'px';
+      obsLeft -= currentSpeed;
+      obs.style.left = obsLeft + 'px';
 
-    if (obsLeft > playerLeft && obsLeft < (playerLeft + playerWidth) && playerBottom <= 55) {
-      endGame();
-      return;
-    }
+      if (obsLeft > playerLeft && obsLeft < (playerLeft + playerWidth) && playerBottom <= 55) {
+        endGame();
+        return;
+      }
 
-    if (obsLeft < -50) {
-      obs.remove();
-      activeObstacles.splice(i, 1);
+      if (obsLeft < -50) {
+        obs.remove();
+        activeObstacles.splice(i, 1);
+      }
     }
   }
 
@@ -379,10 +377,10 @@ function startGame() {
   score = 0;
   currentSpeed = 6;
   activeObstacles = [];
-  activeClouds = []; // Nou
+  activeClouds = [];
   
   if (obstacleContainer) obstacleContainer.innerHTML = '';
-  if (cloudContainer) cloudContainer.innerHTML = ''; // Nou
+  if (cloudContainer) cloudContainer.innerHTML = '';
   if (scoreVal) scoreVal.textContent = score;
   if (gameOverScreen) gameOverScreen.style.display = 'none';
   
@@ -396,7 +394,7 @@ function startGame() {
   }, 50);
 
   spawnObstacle();
-  spawnCloud(); // Nou: activem els núvols al començar
+  spawnCloud();
   requestAnimationFrame(updateGame);
 }
 
@@ -404,7 +402,7 @@ function endGame() {
   isPlaying = false;
   clearInterval(scoreInterval);
   clearTimeout(obstacleTimeout);
-  clearTimeout(cloudTimeout); // Nou
+  clearTimeout(cloudTimeout);
   
   const currentLang = document.documentElement.lang || 'ca';
   const msgText = translations[currentLang]['game-over-msg'];
@@ -421,7 +419,5 @@ if (startGameBtn) {
   startGameBtn.addEventListener('click', (e) => {
     e.stopPropagation(); 
     startGame();
-  });
-}
   });
 }
