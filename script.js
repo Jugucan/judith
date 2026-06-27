@@ -240,11 +240,11 @@ if (backToTopBtn) {
 }
 
 // =====================================================
-// LÒGICA CORREGIDA DEL JOC: BTT RUNNER
+// NOU MOTOR DE JOC: BTT RUNNER IMPREDICTIBLE I EVOLUTIU
 // =====================================================
 const player = document.getElementById('player');
-const obstacle = document.getElementById('obstacle');
 const gameBox = document.getElementById('gameBox');
+const obstacleContainer = document.getElementById('obstacleContainer');
 const gameOverScreen = document.getElementById('gameOverScreen');
 const gameMessage = document.getElementById('gameMessage');
 const startGameBtn = document.getElementById('startGameBtn');
@@ -253,8 +253,10 @@ const scoreVal = document.getElementById('scoreVal');
 let isJumping = false;
 let isPlaying = false;
 let score = 0;
-let gameLoopInterval;
 let scoreInterval;
+let obstacleTimeout; // Controla quan apareix el pròxim obstacle
+let activeObstacles = []; // Llista per controlar les pedres en pantalla
+let currentSpeed = 5; // Velocitat inicial dels obstacles
 
 function jump() {
   if (isJumping || !isPlaying) return;
@@ -264,10 +266,10 @@ function jump() {
   setTimeout(() => {
     player.classList.remove('jump');
     isJumping = false;
-  }, 500);
+  }, 600); // Batuda una mica més llarga pel nou salt
 }
 
-// Controls del teclat i ratolí
+// Controls de salt
 document.addEventListener('keydown', (e) => {
   if (e.code === 'Space' && isPlaying) {
     e.preventDefault(); 
@@ -278,43 +280,98 @@ if (gameBox) {
   gameBox.addEventListener('click', jump);
 }
 
+// Generador aleatori d'obstacles
+function spawnObstacle() {
+  if (!isPlaying) return;
+
+  // Varietat d'obstacles de muntanya
+  const obstacleTypes = ['🪨', '🪵', '🌿', '🪨🪨'];
+  const chosenType = obstacleTypes[Math.floor(Math.random() * obstacleTypes.length)];
+
+  const obs = document.createElement('div');
+  obs.className = 'dynamic-obstacle';
+  obs.textContent = chosenType;
+  obs.style.left = gameBox.offsetWidth + 'px';
+  obstacleContainer.appendChild(obs);
+
+  // Guardem l'objecte a la nostra llista de control de col·lisions
+  activeObstacles.push(obs);
+
+  // Programem el següent obstacle amb un temps totalment aleatori (entre 1.2 i 3 segons)
+  // Això fa que a vegades surtin dues pedres gairebé juntes o triguin molt més!
+  const nextSpawnTime = Math.random() * (3000 - 1200) + 1200;
+  obstacleTimeout = setTimeout(spawnObstacle, nextSpawnTime);
+}
+
+// Motor de moviment i col·lisions (Bucle principal)
+function updateGame() {
+  if (!isPlaying) return;
+
+  const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
+  // Tenint en compte el mètode scaleX(-1), adaptem el rang de contacte real del emoji
+  const playerLeft = 80; 
+  const playerWidth = 35;
+
+  for (let i = activeObstacles.length - 1; i >= 0; i--) {
+    const obs = activeObstacles[i];
+    let obsLeft = parseInt(obs.style.left);
+
+    // Moure l'obstacle cap a l'esquerra segons la velocitat actual
+    obsLeft -= currentSpeed;
+    obs.style.left = obsLeft + 'px';
+
+    // Detecció precisa de col·lisió
+    if (obsLeft > playerLeft && obsLeft < (playerLeft + playerWidth) && playerBottom <= 45) {
+      endGame();
+      return;
+    }
+
+    // Netejar obstacles que ja han passat de llarg per no saturar el navegador
+    if (obsLeft < -50) {
+      obs.remove();
+      activeObstacles.splice(i, 1);
+    }
+  }
+
+  requestAnimationFrame(updateGame);
+}
+
 function startGame() {
   isPlaying = true;
   score = 0;
+  currentSpeed = 6; // Velocitat base
+  activeObstacles = [];
+  if (obstacleContainer) obstacleContainer.innerHTML = ''; // Esborrem pedres velles
   if (scoreVal) scoreVal.textContent = score;
   if (gameOverScreen) gameOverScreen.style.display = 'none';
-  if (obstacle) obstacle.classList.add('move-obstacle');
   
+  // Incrementar punts i pujar la dificultat progressivament
   scoreInterval = setInterval(() => {
     score++;
     if (scoreVal) scoreVal.textContent = score;
-  }, 100);
 
-  gameLoopInterval = setInterval(() => {
-    if (!player || !obstacle || !gameBox) return;
-    
-    const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
-    const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
-
-    // Detecció de topada calibrada
-    if (obstacleLeft > 30 && obstacleLeft < 70 && playerBottom <= 35) {
-      endGame();
+    // Cada 100 punts, la bicicleta accelera el ritme!
+    if (score % 100 === 0) {
+      currentSpeed += 0.8;
     }
-  }, 10);
+  }, 50); // Punts una mica més dinàmics
+
+  // Iniciem generació d'obstacles i bucle de renderitzat físic
+  spawnObstacle();
+  requestAnimationFrame(updateGame);
 }
 
 function endGame() {
   isPlaying = false;
-  clearInterval(gameLoopInterval);
   clearInterval(scoreInterval);
-  if (obstacle) obstacle.classList.remove('move-obstacle');
+  clearTimeout(obstacleTimeout);
   
   const currentLang = document.documentElement.lang || 'ca';
   const msgText = translations[currentLang]['game-over-msg'];
   const btnText = currentLang === 'ca' ? 'Tornar a jugar' : 'Volver a jugar';
   
   if (gameMessage) {
-    gameMessage.innerHTML = msgText + '<br><span style="font-size:16px;">Score: ' + score + '</span>';
+    gameMessage.innerHTML = msgText + '<br><span style="font-size:16px; font-weight:normal;">Score: ' + score + '</span>';
   }
   if (startGameBtn) startGameBtn.textContent = btnText;
   if (gameOverScreen) gameOverScreen.style.display = 'flex';
