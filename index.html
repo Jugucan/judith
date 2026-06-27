@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Judith Gutiérrez — Gestió digital · Fitness · BTT</title>
+  <title data-key="meta-title">Judith Gutiérrez — Gestió digital · Fitness · BTT</title>
   <meta name="description" content="CV de Judith Gutiérrez. Gestora digital, instructora de fitness i guia de BTT. Apassionada, autodidacta i proactiva." />
   <meta property="og:title" content="Judith Gutiérrez — CV" />
   <meta property="og:description" content="Gestora digital, instructora de fitness i guia de BTT." />
@@ -17,302 +17,298 @@
 </head>
 <body>
 
-  <!-- ============ NAVEGACIÓ ============ -->
   <header class="nav">
     <a href="#top" class="nav__logo">
-  <img src="logo.png" alt="Judith Gutiérrez" style="height:36px;width:auto;filter:brightness(0);" />
-</a>
-<span style="font-family:'Fraunces',serif;font-size:1rem;font-weight:500;letter-spacing:-.02em;color:#111;">Judith Gutiérrez</span>
+      <img src="logo.png" alt="Judith Gutiérrez" style="height:36px;width:auto;filter:brightness(0);" />
+    </a>
+    <span style="font-family:'Fraunces',serif;font-size:1rem;font-weight:500;letter-spacing:-.02em;color:#111;">Judith Gutiérrez</span>
     <nav>
-      <a href="#sobre-mi">Sobre mi</a>
-      <a href="#experiencia">Experiència</a>
-      <a href="#formacio">Formació</a>
-      <a href="#habilitats">Habilitats</a>
-      <a href="#contacte" class="nav__cta">Contacte</a>
+      <a href="#sobre-mi" data-key="menu-sobremi">Sobre mi</a>
+      <a href="#experiencia" data-key="menu-experiencia">Experiència</a>
+      <a href="#formacio" data-key="menu-formacio">Formació</a>
+      <a href="#habilitats" data-key="menu-habilitats">Habilitats</a>
+      <a href="#contacte" class="nav__cta" data-key="menu-contacte">Contacte</a>
+      
+      <div class="lang-switcher">
+        <button id="btn-ca" class="active">CA</button>
+        <button id="btn-es">ES</button>
+      </div>
     </nav>
     <button class="nav__burger" aria-label="Menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- ============ HERO ============ -->
   <section id="top" class="hero">
     <div class="hero__text">
-      <p class="eyebrow">Apassionada · Autodidacta · Proactiva</p>
-      <h1>
+      <p class="eyebrow" data-key="hero-eyebrow">Apassionada · Autodidacta · Proactiva</p>
+      <h1 data-key="hero-title">
         Vull una <em>oportunitat</em><br/>
         per marcar la <mark>diferència</mark>.
       </h1>
-      <p class="lead">
+      <p class="lead" data-key="hero-lead">
         Gestora digital, instructora de fitness i guia de BTT.
         Em fascina crear, dinamitzar i veure com les coses prenen forma.
       </p>
       <div class="hero__actions">
-        <a href="#contacte" class="btn btn--primary">Treballem junts</a>
-        <a href="#experiencia" class="btn btn--ghost">Veure trajectòria →</a>
+        <a href="#contacte" class="btn btn--primary" data-key="hero-btn-primary">Treballem junts</a>
+        <a href="#experiencia" class="btn btn--ghost" data-key="hero-btn-ghost">Veure trajectòria →</a>
       </div>
     </div>
     <div class="hero__photo">
       <img src="judith.jpg" alt="Judith Gutiérrez" />
-      <div class="hero__badge">Disponible per a noves oportunitats</div>
+      <div class="hero__badge" data-key="hero-badge">Disponible per a noves oportunitats</div>
     </div>
   </section>
 
-  <!-- ============ MARQUEE ============ -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>Administració</span><span>·</span>
-      <span>WordPress</span><span>·</span>
-      <span>Assistent virtual</span><span>·</span>
-      <span>Atenció al client</span><span>·</span>
-      <span>Fitness</span><span>·</span>
+      <span data-key="m1">Administració</span><span>·</span>
+      <span data-key="m2">WordPress</span><span>·</span>
+      <span data-key="m3">Assistent virtual</span><span>·</span>
+      <span data-key="m4">Atenció al client</span><span>·</span>
+      <span data-key="m5">Fitness</span><span>·</span>
       <span>BTT</span><span>·</span>
-      <span>Back office</span><span>·</span>
-      <span>Iniciatives creatives</span><span>·</span>
-      <!-- duplicat per al loop -->
-      <span>Administració</span><span>·</span>
-      <span>WordPress</span><span>·</span>
-      <span>Assistent virtual</span><span>·</span>
-      <span>Atenció al client</span><span>·</span>
-      <span>Fitness</span><span>·</span>
+      <span data-key="m6">Back office</span><span>·</span>
+      <span data-key="m7">Iniciatives creatives</span><span>·</span>
+      <span data-key="m1">Administració</span><span>·</span>
+      <span data-key="m2">WordPress</span><span>·</span>
+      <span data-key="m3">Assistent virtual</span><span>·</span>
+      <span data-key="m4">Atenció al client</span><span>·</span>
+      <span data-key="m5">Fitness</span><span>·</span>
       <span>BTT</span><span>·</span>
-      <span>Back office</span><span>·</span>
-      <span>Iniciatives creatives</span><span>·</span>
+      <span data-key="m6">Back office</span><span>·</span>
+      <span data-key="m7">Iniciatives creatives</span><span>·</span>
     </div>
   </div>
 
-  <!-- ============ SOBRE MI ============ -->
   <section id="sobre-mi" class="section">
     <div class="section__head">
       <span class="num">01</span>
-      <h2>Sobre mi</h2>
+      <h2 data-key="title-sobremi">Sobre mi</h2>
     </div>
     <div class="about">
-      <p class="about__big">
+      <p class="about__big" data-key="about-p1">
         Sóc una professional versàtil amb més de <strong>20 anys d'experiència</strong>
         en el sector administratiu i digital, complementada amb formació en
         fitness i guiatge de BTT.
       </p>
-      <p>
+      <p data-key="about-p2">
         La meva trajectòria reflecteix una constant inquietud per aprendre i
         evolucionar. Em caracteritzo per ser resolutiva, organitzada i amb una
         gran capacitat d'adaptació. La meva experiència en diferents sectors
         m'ha donat una visió integral dels processos i una habilitat especial
         per optimitzar recursos i implementar millores.
       </p>
-      <p>
+      <p data-key="about-p3">
         L'energia i la motivació són el meu segell, i el somriure i la passió,
         la meva identitat. Tant en una reunió com en una classe o sobre la bici,
-        sempre busco que cada experiència sigui única, autèntica i plena de força.
+        always busco que cada experiència sigui única, autèntica i plena de força.
       </p>
     </div>
   </section>
 
-  <!-- ============ EXPERIÈNCIA ============ -->
   <section id="experiencia" class="section section--alt">
     <div class="section__head">
       <span class="num">02</span>
-      <h2>Experiència</h2>
+      <h2 data-key="title-experiencia">Experiència</h2>
     </div>
 
-    <h3 class="cat">Sector administratiu i digital</h3>
+    <h3 class="cat" data-key="cat-admin">Sector administratiu i digital</h3>
     <ol class="timeline">
       <li>
         <span class="when">2018 — 2026</span>
-        <h4>Cofundadora i Administrativa · Rutatur</h4>
+        <h4 data-key="exp1-title">Cofundadora i Administrativa · Rutatur</h4>
         <ul>
-          <li>Gestió de licitacions públiques</li>
-          <li>Administració de l'agència de viatges receptiva</li>
-          <li>Desenvolupament i manteniment web</li>
-          <li>Gestió financera i control d'ingressos i despeses</li>
+          <li data-key="exp1-i1">Gestió de licitacions públiques</li>
+          <li data-key="exp1-i2">Administració de l'agència de viatges receptiva</li>
+          <li data-key="exp1-i3">Desenvolupament i manteniment web</li>
+          <li data-key="exp1-i4">Gestió financera i control d'ingressos i despeses</li>
         </ul>
       </li>
       <li>
         <span class="when">2016 — 2020</span>
-        <h4>Fundadora i Desenvolupadora · Neryou</h4>
+        <h4 data-key="exp2-title">Fundadora i Desenvolupadora · Neryou</h4>
         <ul>
-          <li>Disseny i implementació d'una app per dinamitzar el comerç local</li>
-          <li>Creació d'interfície per connectar usuaris amb empreses locals</li>
-          <li>Gestió de la plataforma digital i relacions amb empreses col·laboradores</li>
+          <li data-key="exp2-i1">Disseny i implementació d'una app per dinamitzar el comerç local</li>
+          <li data-key="exp2-i2">Creació d'interfície per connectar usuaris amb empreses locales</li>
+          <li data-key="exp2-i3">Gestió de la plataforma digital i relacions amb empreses col·laboradores</li>
         </ul>
       </li>
       <li>
         <span class="when">2014 — 2016</span>
-        <h4>Auxiliar de Parafarmàcia</h4>
+        <h4 data-key="exp3-title">Auxiliar de Parafarmàcia</h4>
         <ul>
-          <li>Gestió de bases de dades de clients</li>
-          <li>Control d'estoc i aprovisionament</li>
-          <li>Atenció personalitzada i assessorament al client</li>
-          <li>Preparació de sistemes de dosificació personalitzada</li>
+          <li data-key="exp3-i1">Gestió de bases de dades de clients</li>
+          <li data-key="exp3-i2">Control d'estoc i aprovisionament</li>
+          <li data-key="exp3-i3">Atenció personalitzada i assessorament al client</li>
+          <li data-key="exp3-i4">Preparació de sistemes de dosificació personalitzada</li>
         </ul>
       </li>
       <li>
         <span class="when">2012 — 2013</span>
-        <h4>Administració i Recepció · Gimnàs privat</h4>
+        <h4 data-key="exp4-title">Administració i Recepció · Gimnàs privat</h4>
         <ul>
-          <li>Gestió de socis i control d'assistència</li>
-          <li>Atenció al client i resolució d'incidències</li>
-          <li>Promoció de serveis i activitats</li>
+          <li data-key="exp4-i1">Gestió de socis i control d'assistència</li>
+          <li data-key="exp4-i2">Atenció al client i resolució d'incidències</li>
+          <li data-key="exp4-i3">Promoció de serveis i activitats</li>
         </ul>
       </li>
       <li>
         <span class="when">2012</span>
-        <h4>Administració i Pràctiques · Empresa de suplements esportius</h4>
+        <h4 data-key="exp5-title">Administració i Pràctiques · Empresa de suplements esportius</h4>
         <ul>
-          <li>Gestió administrativa i comptabilitat</li>
-          <li>Coordinació d'agenda i comunicació interna</li>
-          <li>Suport administratiu en diferents departaments</li>
+          <li data-key="exp5-i1">Gestió administrativa i comptabilitat</li>
+          <li data-key="exp5-i2">Coordinació d'agenda i comunicació interna</li>
+          <li data-key="exp5-i3">Suport administratiu en diferents departaments</li>
         </ul>
       </li>
       <li>
         <span class="when">2011</span>
-        <h4>Dinamitzadora Digital · Ajuntament Municipal</h4>
+        <h4 data-key="exp6-title">Dinamitzadora Digital · Ajuntament Municipal</h4>
         <ul>
-          <li>Implementació de programes de formació digital per a desocupats</li>
-          <li>Coordinació del programa ACTIC de certificació de competències digitals</li>
-          <li>Gestió de bases de dades i documentació administrativa</li>
+          <li data-key="exp6-i1">Implementació de programes de formació digital per a desocupats</li>
+          <li data-key="exp6-i2">Coordinació del programa ACTIC de certificació de competències digitals</li>
+          <li data-key="exp6-i3">Gestió de bases de dades i documentació administrativa</li>
         </ul>
       </li>
       <li>
         <span class="when">2002 — 2009</span>
-        <h4>Oficial Administratiu i Gerent · Supermercat</h4>
+        <h4 data-key="exp7-title">Oficial Administratiu i Gerent · Supermercat</h4>
         <ul>
-          <li>Supervisió d'equip i implementació de millores</li>
-          <li>Control de normativa i protocols interns</li>
-          <li>Gestió administrativa i atenció al client</li>
+          <li data-key="exp7-i1">Supervisió d'equip i implementació de millores</li>
+          <li data-key="exp7-i2">Control de normativa i protocols interns</li>
+          <li data-key="exp7-i3">Gestió administrativa i atenció al client</li>
         </ul>
       </li>
     </ol>
 
-    <h3 class="cat">Sector fitness i esport</h3>
+    <h3 class="cat" data-key="cat-fitness">Sector fitness i esport</h3>
     <ol class="timeline">
       <li>
         <span class="when">2020 — Actualitat</span>
-        <h4>Guia, Dinamitzadora i Conductora de grups de BTT · Rutatur</h4>
+        <h4 data-key="exp8-title">Guia, Dinamitzadora i Conductora de grups de BTT · Rutatur</h4>
         <ul>
-          <li>Conducció de grups en rutes de BTT de diferents nivells</li>
-          <li>Assessorament tècnic i assistència</li>
-          <li>Dinamització d'activitats i creació d'experiències personalitzades</li>
+          <li data-key="exp8-i1">Conducció de grups en rutes de BTT de diferents nivells</li>
+          <li data-key="exp8-i2">Assessorament tècnic i assistència</li>
+          <li data-key="exp8-i3">Dinamització d'activitats i creació d'experiències personalitzades</li>
         </ul>
       </li>
       <li>
         <span class="when">2020 — 2026</span>
-        <h4>Instructora i Monitora de BTT infantil · Rutatur</h4>
+        <h4 data-key="exp9-title">Instructora i Monitora de BTT infantil · Rutatur</h4>
         <ul>
-          <li>Planificació i conducció de sessions de BTT per a nens</li>
-          <li>Ensenyament de tècniques bàsiques i seguretat en cliclisme</li>
-          <li>Disseny i conducció de classes col·lectives</li>
+          <li data-key="exp9-i1">Planificació i conducció de sessions de BTT per a nens</li>
+          <li data-key="exp9-i2">Ensenyament de tècniques bàsiques i seguretat en ciclisme</li>
+          <li data-key="exp9-i3">Disseny i conducció de classes col·lectives</li>
         </ul>
       </li>
       <li>
         <span class="when">2019 — Actualitat</span>
-        <h4>Instructora de Fitness i Activitats Dirigides</h4>
+        <h4 data-key="exp10-title">Instructora de Fitness i Activitats Dirigides</h4>
         <ul>
-          <li>Classes de BODYCOMBAT, BODYPUMP, SH'BAM, BODYBALANCE i LES MILLS DANCE</li>
-          <li>Elaboració de programes d'entrenament grupals</li>
-          <li>Planificació de sessions adaptades a diferents nivells</li>
+          <li data-key="exp10-i1">Classes de BODYCOMBAT, BODYPUMP, SH'BAM, BODYBALANCE i LES MILLS DANCE</li>
+          <li data-key="exp10-i2">Elaboració de programes d'entrenament grupals</li>
+          <li data-key="exp10-i3">Planificació de sessions adaptades a diferents nivells</li>
         </ul>
       </li>
     </ol>
   </section>
 
-  <!-- ============ FORMACIÓ ============ -->
   <section id="formacio" class="section">
     <div class="section__head">
       <span class="num">03</span>
-      <h2>Formació</h2>
+      <h2 data-key="title-formacio">Formació</h2>
     </div>
 
     <div class="cards">
       <article class="card">
         <span class="card__year">2012</span>
-        <h4>Cicle Formatiu de Grau Superior — Administració i Finances</h4>
-        <p>Institut Obert de Catalunya · IES Santa Coloma de Farners</p>
+        <h4 data-key="f1-title">Cicle Formatiu de Grau Superior — Administració i Finances</h4>
+        <p data-key="f1-place">Institut Obert de Catalunya · IES Santa Coloma de Farners</p>
       </article>
       <article class="card">
         <span class="card__year">2019</span>
-        <h4>Tècnic de Ciclisme Nivell 1</h4>
-        <p>Federació Catalana de Ciclisme · Escola Catalana de l'Esport · ROPEC 034811</p>
+        <h4 data-key="f2-title">Tècnic de Ciclisme Nivell 1</h4>
+        <p data-key="f2-place">Federació Catalana de Ciclisme · Escola Catalana de l'Esport · ROPEC 034811</p>
       </article>
       <article class="card">
         <span class="card__year">2019</span>
-        <h4>Certificat en Acondicionament Físic i Activitats Dirigides</h4>
-        <p>European Sports and Health Institute (ESHI) · ROPEC</p>
+        <h4 data-key="f3-title">Certificat en Acondicionament Físic i Activitats Dirigides</h4>
+        <p data-key="f3-place">European Sports and Health Institute (ESHI) · ROPEC</p>
       </article>
     </div>
 
-    <h3 class="cat">Formació complementària</h3>
+    <h3 class="cat" data-key="cat-complementaria">Formació complementària</h3>
     <div class="pills">
-      <span>Primers Auxilis (Laborali, 2021)</span>
-      <span>Planificació i control de càrrega (ESHI, 2020)</span>
+      <span data-key="p1">Primers Auxilis (Laborali, 2021)</span>
+      <span data-key="p2">Planificació i control de càrrega (ESHI, 2020)</span>
       <span>BODYPUMP (Les Mills, 2019)</span>
       <span>SH'BAM (Les Mills, 2019)</span>
       <span>BODYBALANCE (Les Mills, 2019)</span>
       <span>BODYCOMBAT (Les Mills, 2018)</span>
-      <span>Mecanografia — 234 ppm (2011)</span>
-      <span>Tècniques administratives d'oficina (2010)</span>
-      <span>Informàtica, ofimàtica i Internet bàsic (2010)</span>
-      <span>Comunicació, arxiu i atenció al client (2010)</span>
-      <span>Aplicacions administratives i de gestió (2010)</span>
-      <span>Empresa i gestió internacional (2010)</span>
-      <span>Integració d'aplicacions ofimàtiques(2008)</span>
-      <span>Excel i Ofimàtica (2007)</span>      
-      <span>Auxiliar de Farmàcia (2014)</span>
-      <span>Serveis estètics, higiene, depilació i maquillatge (2014)</span>
+      <span data-key="p3">Mecanografia — 234 ppm (2011)</span>
+      <span data-key="p4">Tècniques administratives d'oficina (2010)</span>
+      <span data-key="p5">Informàtica, ofimàtica i Internet bàsic (2010)</span>
+      <span data-key="p6">Comunicació, arxiu i atenció al client (2010)</span>
+      <span data-key="p7">Aplicacions administratives i de gestió (2010)</span>
+      <span data-key="p8">Empresa i gestió internacional (2010)</span>
+      <span data-key="p9">Integració d'aplicacions ofimàtiques (2008)</span>
+      <span data-key="p10">Excel i Ofimàtica (2007)</span>      
+      <span data-key="p11">Auxiliar de Farmàcia (2014)</span>
+      <span data-key="p12">Serveis estètics, higiene, depilació i maquillatge (2014)</span>
     </div>
   </section>
 
-  <!-- ============ HABILITATS + IDIOMES ============ -->
   <section id="habilitats" class="section section--alt">
     <div class="section__head">
       <span class="num">04</span>
-      <h2>Habilitats &amp; idiomes</h2>
+      <h2 data-key="title-habilitats">Habilitats &amp; idiomes</h2>
     </div>
 
     <div class="skills">
       <div>
-        <h4>Administratives</h4>
+        <h4 data-key="sk-h1">Administratives</h4>
         <ul>
-          <li>Gestió documental i arxiu</li>
-          <li>Comptabilitat i control pressupostari</li>
-          <li>Atenció al client multicanal</li>
-          <li>Resolució d'incidències</li>
-          <li>Organització i planificació</li>
-          <li>Optimització de processos</li>
+          <li data-key="sk-a1">Gestió documental i arxiu</li>
+          <li data-key="sk-a2">Comptabilitat i control pressupostari</li>
+          <li data-key="sk-a3">Atenció al client multicanal</li>
+          <li data-key="sk-a4">Resolució d'incidències</li>
+          <li data-key="sk-a5">Organització i planificació</li>
+          <li data-key="sk-a6">Optimització de processos</li>
         </ul>
       </div>
       <div>
-        <h4>Digitals</h4>
+        <h4 data-key="sk-h2">Digitals</h4>
         <ul>
-          <li>Creació i manteniment web</li>
-          <li>Implementació de programes digitals</li>
-          <li>Gestió de bases de dades</li>
-          <li>Ofimàtica avançada</li>
-          <li>Digitalització de processos</li>
-          <li>Gestió de plataformes online</li>
+          <li data-key="sk-d1">Creació i manteniment web</li>
+          <li data-key="sk-d2">Implementació de programes digitals</li>
+          <li data-key="sk-d3">Gestió de bases de dades</li>
+          <li data-key="sk-d4">Ofimàtica avançada</li>
+          <li data-key="sk-d5">Digitalització de processos</li>
+          <li data-key="sk-d6">Gestió de plataformes online</li>
         </ul>
       </div>
       <div>
-        <h4>Personals</h4>
+        <h4 data-key="sk-h3">Personals</h4>
         <ul>
-          <li>Adaptabilitat i flexibilitat</li>
-          <li>Proactivitat i iniciativa</li>
-          <li>Aprenentatge continu</li>
-          <li>Treball en equip</li>
-          <li>Comunicació efectiva</li>
-          <li>Atenció al detall</li>
+          <li data-key="sk-p1">Adaptabilitat i flexibilitat</li>
+          <li data-key="sk-p2">Proactivitat i iniciativa</li>
+          <li data-key="sk-p3">Aprenentatge continu</li>
+          <li data-key="sk-p4">Treball en equip</li>
+          <li data-key="sk-p5">Comunicació efectiva</li>
+          <li data-key="sk-p6">Atenció al detall</li>
         </ul>
       </div>
     </div>
 
     <div class="langs">
-      <div><strong>Català</strong><span>Natiu</span><i style="--w:100%"></i></div>
-      <div><strong>Castellà</strong><span>Natiu</span><i style="--w:100%"></i></div>
-      <div><strong>Anglès</strong><span>Bàsic</span><i style="--w:35%"></i></div>
+      <div><strong data-key="lang-ca">Català</strong><span data-key="lang-nat">Natiu</span><i style="--w:100%"></i></div>
+      <div><strong data-key="lang-es">Castellà</strong><span data-key="lang-nat">Natiu</span><i style="--w:100%"></i></div>
+      <div><strong data-key="lang-en">Anglès</strong><span data-key="lang-bas">Bàsic</span><i style="--w:35%"></i></div>
     </div>
   </section>
 
-  <!-- ============ CAFÈ ============ -->
   <section id="cafe" class="coffee">
     <div class="coffee__inner">
       <div class="coffee__art" aria-hidden="true">
@@ -333,58 +329,57 @@
         </svg>
       </div>
       <div class="coffee__text">
-        <span class="eyebrow eyebrow--light">Prenem-nos un cafè ☕</span>
-        <h2>El millor camí comença amb un primer pas… o un <em>cafè</em>!</h2>
-        <p>
+        <span class="eyebrow eyebrow--light" data-key="coffee-eyebrow">Prenem-nos un cafè ☕</span>
+        <h2 data-key="coffee-title">El millor camí comença amb un primer pas… o un <em>cafè</em>!</h2>
+        <p data-key="coffee-p1">
           Si has arribat fins aquí, potser és per curiositat, o potser perquè alguna cosa
           en mi t'ha cridat l'atenció. Sigui com sigui, només hi ha una manera de saber
           si encaixem: trobant-nos i parlant.
         </p>
-        <p>
+        <p data-key="coffee-p2">
           Res de discursos preparats ni formalismes pesats. Només un cafè, una estona
-          compartida, una conversa autèntica i, qui sap, potser una d'aquelles
+          compartida, una conversa autèntica i, qui sab, potser una d'aquelles
           trobades en les què val la pena haver perdut una mica el temps.
         </p>
-        <p class="coffee__closing">
+        <p class="coffee__closing" data-key="coffee-closing">
           Tu poses el lloc i l'hora, jo porto l'energia i el somriure.
           <strong>Prenem aquest cafè?</strong> 😉
         </p>
-        <a href="#contacte" class="btn btn--primary">Sí, prenem-lo →</a>
+        <a href="#contacte" class="btn btn--primary" data-key="coffee-btn">Sí, prenem-lo →</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACTE ============ -->
   <section id="contacte" class="section contact">
     <div class="section__head">
       <span class="num">05</span>
-      <h2>Contacte</h2>
+      <h2 data-key="title-contacte">Contacte</h2>
     </div>
-    <p class="contact__lead">
+    <p class="contact__lead" data-key="contact-lead">
       L'èxit és qüestió de trobar les persones adequades en el moment oportú.
       Potser aquest és el nostre moment? Provem-ho. 😉
     </p>
     <div class="contact__grid">
       <a href="mailto:judithg@outlook.com" class="contact__card">
-        <span>Email</span>
+        <span data-key="contact-mail">Email</span>
         <strong>judithg@outlook.com</strong>
       </a>
       <a href="tel:+34744401844" class="contact__card">
-        <span>Telèfon</span>
+        <span data-key="contact-phone">Telèfon</span>
         <strong>744 401 844</strong>
       </a>
     </div>
   </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Judith Gutiérrez · Fet amb cura</p>
+    <p>© <span id="year"></span> <span data-key="footer-text">Judith Gutiérrez · Fet amb cura</span></p>
   </footer>
 
   <button id="backToTop" class="back-to-top" aria-label="Tornar a dalt">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="18 15 12 9 6 15"></polyline>
-  </svg>
-</button>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
