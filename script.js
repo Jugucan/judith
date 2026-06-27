@@ -85,7 +85,7 @@ const translations = {
     "m1": "Administración", "m2": "WordPress", "m3": "Asistente virtual", "m4": "Atención al cliente", "m5": "Fitness", "m6": "Back office", "m7": "Iniciativas creativas",
     "title-sobremi": "Sobre mí",
     "about-p1": "Soy una professional versátil con más de <strong>20 años de experiencia</strong> en el sector administrativo y digital, complementada con formación en fitness y guía de BTT.",
-    "about-p2": "Mi trayectoria refleja una constante inquietud por aprender y evolucionar. Me caracterizo por ser resolutiva, organizada y con una gran capacidad de adaptación. Mi experiencia en diferentes sectores mi ha dado una visión integral de los procesos y una habilidad especial para optimizar recursos e implementar mejoras.",
+    "about-p2": "Mi trayectoria refleja una constante inquietud por aprender y evolucionar. Me caracterizo por ser resolutiva, organizada y con una gran capacidad de adaptación. Mi experiencia en diferentes sectores me ha dado una visión integral de los procesos y una habilidad especial para optimizar recursos e implementar mejoras.",
     "about-p3": "La energía y la motivación son mi sello, y la sonrisa y la pasión, mi identidad. Tanto en una reunión como en una clase o sobre la bici, siempre busco que cada experiencia sea única, auténtica y llena de fuerza.",
     "title-experiencia": "Experiencia",
     "cat-admin": "Sector administrativo y digital",
