@@ -303,30 +303,27 @@ function spawnObstacle() {
   obstacleTimeout = setTimeout(spawnObstacle, nextSpawnTime);
 }
 
-// Motor de moviment i col·lisions (Bucle principal)
+// Motor de moviment i col·lisions (Calibrat per a pantalla alta)
 function updateGame() {
   if (!isPlaying) return;
 
   const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
-  // Tenint en compte el mètode scaleX(-1), adaptem el rang de contacte real del emoji
-  const playerLeft = 80; 
+  const playerLeft = 60; 
   const playerWidth = 35;
 
   for (let i = activeObstacles.length - 1; i >= 0; i--) {
     const obs = activeObstacles[i];
     let obsLeft = parseInt(obs.style.left);
 
-    // Moure l'obstacle cap a l'esquerra segons la velocitat actual
     obsLeft -= currentSpeed;
     obs.style.left = obsLeft + 'px';
 
-    // Detecció precisa de col·lisió
-    if (obsLeft > playerLeft && obsLeft < (playerLeft + playerWidth) && playerBottom <= 45) {
+    // Detecció de col·lisió adaptada al nou terra i alçada de salt
+    if (obsLeft > playerLeft && obsLeft < (playerLeft + playerWidth) && playerBottom <= 55) {
       endGame();
       return;
     }
 
-    // Netejar obstacles que ja han passat de llarg per no saturar el navegador
     if (obsLeft < -50) {
       obs.remove();
       activeObstacles.splice(i, 1);
