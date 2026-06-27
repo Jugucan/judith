@@ -45,3 +45,26 @@ document.querySelectorAll('.section, .hero__text, .hero__photo, .timeline li, .c
     el.classList.add('reveal'); 
     io.observe(el); 
   });
+
+// Botó Tornar a dalt
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+  // Escitem l'scroll de la pàgina
+  window.addEventListener('scroll', () => {
+    // Si l'usuari ha baixat més de 400 píxels, ensenyem el botó, si no, l'asguem
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('is-visible');
+    } else {
+      backToTopBtn.classList.remove('is-visible');
+    }
+  });
+
+  // Quan es fa clic al botó
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Puja lliscant de manera suau i elegant
+    });
+  });
+}
