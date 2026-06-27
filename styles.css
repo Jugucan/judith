@@ -663,6 +663,15 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   pointer-events: none;
 }
 
+/* Arbres de fons decoratius */
+.dynamic-tree {
+  position: absolute;
+  bottom: 28px; /* Arrelats al terra del joc */
+  z-index: 1;   /* Per darrere de la ciclista i els obstacles */
+  opacity: 0.5; /* Suaus perquè no es confonguin amb els obstacles del terra */
+  pointer-events: none;
+}
+
 /* Pantalla de Game Over / Inici */
 .game-overlay {
   position: absolute;
