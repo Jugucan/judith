@@ -31,27 +31,26 @@ if (burger && menu) {
 }
 
 // =====================================================
-// REVEAL EN SCROLL + MENÚ ACTIU DINÀMIC (SCROLLSPY)
+// REVEAL EN SCROLL + MENÚ ACTIU DINÀMIC (SCROLLSPY CALIBRAT)
 // =====================================================
 const menuLinks = document.querySelectorAll('.nav nav a');
 const sections = document.querySelectorAll('.section');
 
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    // 1. Efecte Reveal original (fa aparèixer la secció)
+    // 1. Efecte Reveal original
     if (e.isIntersecting) {
       e.target.classList.add('is-visible');
     }
 
-    // 2. Control del Menú Actiu
-    // Fem servir un llindar una mica més estricte per assegurar-nos que la secció ocupa bona part de la pantalla
-    if (e.isIntersecting && e.intersectionRatio > 0.3) {
+    // 2. Control del Menú Actiu (Versió súper sensible per a seccions curtes)
+    if (e.isIntersecting) {
       const currentId = e.target.getAttribute('id');
       
-      // Treiem la classe 'active' de tots els enllaços del menú
+      // Treiem la classe 'active' de tots els enllaços
       menuLinks.forEach(link => link.classList.remove('active'));
       
-      // Busquem l'enllaç que apunta a aquesta secció concreta i li col·loquem la classe 'active'
+      // Busquem l'enllaç corresponent i l'activem
       const activeLink = document.querySelector(`.nav nav a[href="#${currentId}"]`);
       if (activeLink) {
         activeLink.classList.add('active');
@@ -59,18 +58,17 @@ const scrollObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { 
-  // Rango de detecció optimitzat: demanem que es detecti quan estigui a prop del centre de la pantalla
-  rootMargin: "-20% 0px -40% 0px",
-  threshold: [0.12, 0.4] 
+  // Modifiquem el marge: creem una línia virtual de detecció just al centre de la pantalla
+  rootMargin: "-45% 0px -45% 0px",
+  threshold: 0 // Amb que un sol píxel creu el centre de la pantalla, s'activarà
 });
 
-// Activem l'observador per a totes les teves seccions principals
+// Activem l'observador a les seccions
 sections.forEach(sec => scrollObserver.observe(sec));
 
-// Apliquem el reveal original també als elements petits del hero i les targetes
+// Elements visuals petits
 document.querySelectorAll('.hero__text, .hero__photo, .timeline li, .card').forEach(el => {
   el.classList.add('reveal');
-  // Creem un micro-observador només visual per a ells per no barrejar-ho amb el menú
   new IntersectionObserver((entries, self) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
