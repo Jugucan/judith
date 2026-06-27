@@ -105,7 +105,7 @@ const translations = {
     "exp7-i1": "Supervisión de equipo e implementación de mejoras", "exp7-i2": "Control de normativa y protocolos internos", "exp7-i3": "Gestión administrativa y atención al cliente",
     "cat-fitness": "Sector fitness y deporte",
     "exp8-title": "Guía, Dinamizadora y Conductora de grupos de BTT · Rutatur",
-    "exp8-i1": "Conducción de grupos en rutas de BTT de diferentes niveles", "exp8-i2": "Asesoramiento técnico y asistencia", "exp8-i3": "Dinamización de actividades y creación de experiencias personalizadas",
+    "exp8-i1": "Conducción de grupos en rutas BTT de diferentes niveles", "exp8-i2": "Asesoramiento técnico y asistencia", "exp8-i3": "Dinamización de actividades y creación de experiencias personalizadas",
     "exp9-title": "Instructora y Monitora de BTT infantil · Rutatur",
     "exp9-i1": "Planificación y conducción de sesiones de BTT para niños", "exp9-i2": "Enseñanza de técnicas básicas y seguridad en ciclisme", "exp9-i3": "Diseño y conducción de clases colectivas",
     "exp10-title": "Instructora de Fitness y Actividades Dirigidas",
