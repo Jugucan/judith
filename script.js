@@ -53,7 +53,7 @@ const translations = {
     "sk-h1": "Administratives", "sk-h2": "Digitals", "sk-h3": "Personals",
     "sk-a1": "Gestió documental i arxiu", "sk-a2": "Comptabilitat i control pressupostari", "sk-a3": "Atenció al client multicanal", "sk-a4": "Resolució d'incidències", "sk-a5": "Organització i planificació", "sk-a6": "Optimització de processos",
     "sk-d1": "Creació i manteniment web", "sk-d2": "Implementació de programes digitals", "sk-d3": "Gestió de bases de dades", "sk-d4": "Ofimàtica avançada", "sk-d5": "Digitalització de processos", "sk-d6": "Gestió de plataformes online",
-    "sk-p1": "Adaptabilitat i flexibilitat", "sk-p2": "Proactivitat i iniciativa", "sk-p3": "Aprenentatge continu", "sk-p4": "Treball en equip", "sk-p5": "Comunicació efectiva", "sk-p6": "Atenció al detall",
+    "sk-p1": "Adaptabilitat i flexibilitat", "sk-p2": "Proactivitat i iniciativa", "sk-p3": "Aprenentatge continu", "sk-p4": "Treball en equipo", "sk-p5": "Comunicació efectiva", "sk-p6": "Atenció al detall",
     "lang-ca": "Català", "lang-es": "Castellà", "lang-en": "Anglès", "lang-nat": "Natiu", "lang-bas": "Bàsic",
     "coffee-eyebrow": "Prenem-nos un cafè ☕", "coffee-title": "El millor camí comença amb un primer pas… o un <em>cafè</em>!",
     "coffee-p1": "Si has arribat fins aquí, potser és per curiositat, o potser perquè alguna cosa en mi t'ha cridat l'atenció. Sigui com sigui, només hi ha una manera de saber si encaixem: trobant-nos i parlant.",
@@ -61,13 +61,13 @@ const translations = {
     "coffee-closing": "Tu poses el lloc i l'hora, jo porto l'energia i el somriure. <strong>Prenem aquest cafè?</strong> 😉",
     "coffee-btn": "Sí, prenem-lo →",
     "title-contacte": "Contacte", "contact-lead": "L'èxit és qüestió de trobar les persones adequades en el moment oportú. Potser aquest és el nostre moment? Provem-ho. 😉",
-    "contact-mail": "Email", "contact-phone": "Telèfon", "footer-text": "Judith Gutiérrez · Fet amb cura"
+    "contact-mail": "Email", "contact-phone": "Telèfon", "footer-text": "Judith Gutiérrez · Fet amb cura",
     "game-title": "Un petit descans? 🚴‍♀️",
     "game-intro": "Ajuda'm a esquivar els obstacles del camí. Prem l'espai o clica la pantalla per saltar!",
-    "game-start-msg": "Prem \"Començar\" per jugar",
+    "game-start-msg": "Prem Començar per jugar",
     "game-btn": "Començar",
     "game-score-label": "Punts:",
-    "game-over-msg": "💥 Oh no! Has topat amb un obstacle.",
+    "game-over-msg": "💥 Oh no! Has topat amb un obstacle."
   },
   es: {
     "meta-title": "Judith Gutiérrez — Gestión digital · Fitness · BTT",
@@ -84,7 +84,7 @@ const translations = {
     "hero-badge": "Disponible para nuevas oportunidades",
     "m1": "Administración", "m2": "WordPress", "m3": "Asistente virtual", "m4": "Atención al cliente", "m5": "Fitness", "m6": "Back office", "m7": "Iniciativas creativas",
     "title-sobremi": "Sobre mí",
-    "about-p1": "Soy una profesional versátil con más de <strong>20 años de experiencia</strong> en el sector administrativo y digital, complementada con formación en fitness y guía de BTT.",
+    "about-p1": "Soy una professional versátil con más de <strong>20 años de experiencia</strong> en el sector administrativo y digital, complementada con formación en fitness y guía de BTT.",
     "about-p2": "Mi trayectoria refleja una constante inquietud por aprender y evolucionar. Me caracterizo por ser resolutiva, organizada y con una gran capacidad de adaptación. Mi experiencia en diferentes sectores mi ha dado una visión integral de los procesos y una habilidad especial para optimizar recursos e implementar mejoras.",
     "about-p3": "La energía y la motivación son mi sello, y la sonrisa y la pasión, mi identidad. Tanto en una reunión como en una clase o sobre la bici, siempre busco que cada experiencia sea única, auténtica y llena de fuerza.",
     "title-experiencia": "Experiencia",
@@ -100,7 +100,7 @@ const translations = {
     "exp5-title": "Administración y Prácticas · Empresa de suplementos deportivos",
     "exp5-i1": "Gestión administrativa y contabilidad", "exp5-i2": "Coordinación de agenda y comunicación interna", "exp5-i3": "Soporte administrativo en diferentes departamentos",
     "exp6-title": "Dinamizadora Digital · Ayuntamiento Municipal",
-    "exp6-i1": "Implementación de programas de formación digital para desempleados", "exp6-i2": "Coordinación del programa ACTIC de certificación de competencias digitales", "exp6-i3": "Gestión de bases de dades y documentación administrativa",
+    "exp6-i1": "Implementación de programas de formación digital para desempleados", "exp6-i2": "Coordinación del programa ACTIC de certificación de competencias digitales", "exp6-i3": "Gestión de bases de datos y documentación administrativa",
     "exp7-title": "Oficial Administrativo y Gerente · Supermercado",
     "exp7-i1": "Supervisión de equipo e implementación de mejoras", "exp7-i2": "Control de normativa y protocolos internos", "exp7-i3": "Gestión administrativa y atención al cliente",
     "cat-fitness": "Sector fitness y deporte",
@@ -115,10 +115,10 @@ const translations = {
     "f2-title": "Técnico de Ciclismo Nivel 1", "f2-place": "Federació Catalana de Ciclisme · Escola Catalana de l'Esport · ROPEC 034811",
     "f3-title": "Certificado en Acondicionamiento Físico y Actividades Dirigidas", "f3-place": "European Sports and Health Institute (ESHI) · ROPEC",
     "cat-complementaria": "Formación complementaria",
-    "p1": "Primeros Auxilios (Laborali, 2021)", "p2": "Planificación y control de carga (ESHI, 2020)", "p3": "Mecanografía — 234 ppm (2011)", "p4": "Técnicas administrativas de oficina (2010)", "p5": "Informática, ofimática e Internet básico (2010)", "p6": "Comunicación, archivo y atención al cliente (2010)", "p7": "Aplicaciones administrativas y de gestión (2010)", "p8": "Empresa y gestión internacional (2010)", "p9": "Integración de aplicaciones ofimáticas (2008)", "p10": "Excel y Ofimática (2007)", "p11": "Auxiliar de Farmacia (2014)", "p12": "Servicios estéticos, higiene, depilación y maquillaje (2014)",
+    "p1": "Primeros Auxilios (Laborali, 2021)", "p2": "Planificación y control de carga (ESHI, 2020)", "p3": "Mecanografía — 234 ppm (2011)", "p4": "Técnicas administrativas de oficina (2010)", "p5": "Informática, ofimática e Internet básico (2010)", "p6": "Comunicación, archivo y atención al cliente (2010)", "p7": "Aplicaciones administrativas y de gestión (2010)", "p8": "Empresa y gestión internacional (2010)", "p9": "Integración de aplicaciones de ofimática (2008)", "p10": "Excel y Ofimática (2007)", "p11": "Auxiliar de Farmacia (2014)", "p12": "Servicios estéticos, higiene, depilación y maquillaje (2014)",
     "title-habilitats": "Habilidades & idiomas",
     "sk-h1": "Administrativas", "sk-h2": "Digitales", "sk-h3": "Personales",
-    "sk-a1": "Gestión documental y archivo", "sk-a2": "Contabilidad y control presupuestario", "sk-a3": "Atención al client multicanal", "sk-a4": "Resolución de incidencias", "sk-a5": "Organización y planificación", "sk-a6": "Optimización de procesos",
+    "sk-a1": "Gestión documental y archivo", "sk-a2": "Contabilidad y control presupuestario", "sk-a3": "Atención al cliente multicanal", "sk-a4": "Resolución de incidencias", "sk-a5": "Organización y planificación", "sk-a6": "Optimización de procesos",
     "sk-d1": "Creación y mantenimiento web", "sk-d2": "Implementación de programas digitales", "sk-d3": "Gestión de bases de datos", "sk-d4": "Ofimática avanzada", "sk-d5": "Digitalización de procesos", "sk-d6": "Gestión de plataformas online",
     "sk-p1": "Adaptabilidad y flexibilidad", "sk-p2": "Proactividad e iniciativa", "sk-p3": "Aprendizaje continuo", "sk-p4": "Trabajo en equipo", "sk-p5": "Comunicación efectiva", "sk-p6": "Atención al detalle",
     "lang-ca": "Catalán", "lang-es": "Castellano", "lang-en": "Inglés", "lang-nat": "Nativo", "lang-bas": "Básico",
@@ -128,13 +128,13 @@ const translations = {
     "coffee-closing": "Tú pones el lugar y la hora, yo llevo la energía y la sonrisa. <strong>¿Nos tomamos ese café?</strong> 😉",
     "coffee-btn": "Sí, tomémoslo →",
     "title-contacte": "Contacto", "contact-lead": "El éxito es cuestión de encontrar a las personas adecuadas en el momento oportuno. ¿Quizás este sea nuestro momento? Probemos. 😉",
-    "contact-mail": "Email", "contact-phone": "Teléfono", "footer-text": "Judith Gutiérrez · Hecho con mimo"
+    "contact-mail": "Email", "contact-phone": "Teléfono", "footer-text": "Judith Gutiérrez · Hecho con mimo",
     "game-title": "¿Un pequeño descanso? 🚴‍♀️",
     "game-intro": "Ayúdame a esquivar los obstáculos del camino. ¡Pulsa el espacio o clica la pantalla para saltar!",
-    "game-start-msg": "Pulsa \"Comenzar\" para jugar",
+    "game-start-msg": "Pulsa Comenzar para jugar",
     "game-btn": "Comenzar",
     "game-score-label": "Puntos:",
-    "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo.",
+    "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo."
   }
 };
 
@@ -162,7 +162,7 @@ document.getElementById('btn-es')?.addEventListener('click', () => changeLanguag
 const savedLang = localStorage.getItem('idioma-preferit') || 'ca';
 changeLanguage(savedLang);
 
-// --- CONTROL DELS ALTRE CORREGITS DE LA WEB ---
+// --- CONTROL DELS ALTRES SECCIONS DE LA WEB ---
 
 // Any al footer
 const yearEl = document.getElementById('year');
@@ -238,8 +238,9 @@ if (backToTopBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
 // =====================================================
-// JOC: BTT RUNNER
+// LÒGICA CORREGIDA DEL JOC: BTT RUNNER
 // =====================================================
 const player = document.getElementById('player');
 const obstacle = document.getElementById('obstacle');
@@ -260,43 +261,43 @@ function jump() {
   isJumping = true;
   player.classList.add('jump');
   
-  // S'elimina la classe un cop acaba l'animació (500ms)
   setTimeout(() => {
     player.classList.remove('jump');
     isJumping = false;
   }, 500);
 }
 
-// Controls: Espai per saltar o clic a la pantalla del joc
+// Controls del teclat i ratolí
 document.addEventListener('keydown', (e) => {
-  if (e.code === 'Space') {
-    e.preventDefault(); // Evita que la pàgina baixi
+  if (e.code === 'Space' && isPlaying) {
+    e.preventDefault(); 
     jump();
   }
 });
-gameBox.addEventListener('click', jump);
+if (gameBox) {
+  gameBox.addEventListener('click', jump);
+}
 
 function startGame() {
   isPlaying = true;
   score = 0;
-  scoreVal.textContent = score;
-  gameOverScreen.style.display = 'none';
-  obstacle.classList.add('move-obstacle');
+  if (scoreVal) scoreVal.textContent = score;
+  if (gameOverScreen) gameOverScreen.style.display = 'none';
+  if (obstacle) obstacle.classList.add('move-obstacle');
   
-  // Comptador de punts
   scoreInterval = setInterval(() => {
     score++;
-    scoreVal.textContent = score;
+    if (scoreVal) scoreVal.textContent = score;
   }, 100);
 
-  // Comprovació de col·lisions
   gameLoopInterval = setInterval(() => {
+    if (!player || !obstacle || !gameBox) return;
+    
     const playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue('bottom'));
     const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
-    const boxWidth = gameBox.offsetWidth;
 
-    // Ajust de zona de col·lisió simulat
-    if (obstacleLeft > 40 && obstacleLeft < 80 && playerBottom <= 35) {
+    // Detecció de topada calibrada
+    if (obstacleLeft > 30 && obstacleLeft < 70 && playerBottom <= 35) {
       endGame();
     }
   }, 10);
@@ -306,17 +307,22 @@ function endGame() {
   isPlaying = false;
   clearInterval(gameLoopInterval);
   clearInterval(scoreInterval);
-  obstacle.classList.remove('move-obstacle');
+  if (obstacle) obstacle.classList.remove('move-obstacle');
   
-  // Missatge final segons l'idioma actiu
   const currentLang = document.documentElement.lang || 'ca';
-  gameMessage.innerHTML = `${translations[currentLang]['game-over-msg']}<br><span style="font-size:16px;">Score: ${score}</span>`;
-  startGameBtn.textContent = currentLang === 'ca' ? 'Tornar a jugar' : 'Volver a jugar';
+  const msgText = translations[currentLang]['game-over-msg'];
+  const btnText = currentLang === 'ca' ? 'Tornar a jugar' : 'Volver a jugar';
   
-  gameOverScreen.style.display = 'flex';
+  if (gameMessage) {
+    gameMessage.innerHTML = msgText + '<br><span style="font-size:16px;">Score: ' + score + '</span>';
+  }
+  if (startGameBtn) startGameBtn.textContent = btnText;
+  if (gameOverScreen) gameOverScreen.style.display = 'flex';
 }
 
-startGameBtn.addEventListener('click', (e) => {
-  e.stopPropagation(); // Evita que es dispari el salt al clicar el botó
-  startGame();
-});
+if (startGameBtn) {
+  startGameBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    startGame();
+  });
+}
