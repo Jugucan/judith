@@ -643,6 +643,26 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
   pointer-events: none; /* Que el ratolí els ignori completament */
 }
 
+/* El sol, clavat al fons del cel */
+.game-sun {
+  font-size: 40px;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  z-index: 0; /* El fons absolut del joc */
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Els núvols ara passen per sobre del sol, però per darrere de la ciclista */
+.dynamic-cloud {
+  font-size: 34px;
+  position: absolute;
+  z-index: 1; /* Per sobre del sol (0) i per sota de la bici (2) */
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 /* Pantalla de Game Over / Inici */
 .game-overlay {
   position: absolute;
