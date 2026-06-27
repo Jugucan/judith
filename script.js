@@ -287,7 +287,8 @@ if (gameBox) {
 function spawnCloud() {
   if (!isPlaying || !gameBox) return;
 
-  const clouds = ['☁️', '⛅', '💨'];
+  // Deixem només núvols i vent purs per a que es moguin per sobre del sol
+  const clouds = ['☁️', '💨']; 
   const chosenCloud = clouds[Math.floor(Math.random() * clouds.length)];
 
   const cloud = document.createElement('div');
