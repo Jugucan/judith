@@ -528,3 +528,50 @@ h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.02e
     margin: 4px auto 0;
   }
 }
+
+/* =====================================================
+   SELECTOR D'IDIOMES AUTOMÀTIC (CA / ES)
+   ===================================================== */
+.lang-switcher {
+  display: inline-flex;
+  gap: 8px;
+  margin-left: 15px;
+  align-items: center;
+}
+
+.lang-switcher button {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #999; /* Gris claret per al que no està seleccionat */
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.lang-switcher button:hover {
+  color: #111; /* Es torna fosc en passar el ratolí */
+}
+
+/* El botó de l'idioma que està actiu agafa el teu color magenta de marca */
+.lang-switcher button.active {
+  color: var(--accent); 
+  font-weight: 700;
+}
+
+/* Ajust exclusiu per a pantalles petites (Mòbil) */
+@media (max-width: 768px) {
+  .lang-switcher {
+    margin: 25px auto 0 auto; /* El canvia de lloc i el centra a dins del menú mòbil */
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.05); /* Una mini línia divisòria elegant */
+    padding-top: 15px;
+  }
+  .lang-switcher button {
+    font-size: 16px; /* Una mica més gran al mòbil perquè es pugui clicar bé amb el dit */
+    padding: 8px 12px;
+  }
+}
