@@ -67,7 +67,9 @@ const translations = {
     "game-start-msg": "Prem començar per jugar",
     "game-btn": "Començar",
     "game-score-label": "Punts:",
-    "game-over-msg": "💥 Oh no! Has topat amb un obstacle."
+    "game-over-msg": "💥 Oh no! Has topat amb un obstacle.",
+    "date-2020": "2020 — Actualitat",
+    "date-2019": "2019 — Actualitat"
   },
   es: {
     "meta-title": "Judith Gutiérrez — Gestión digital · Fitness · BTT",
@@ -134,7 +136,9 @@ const translations = {
     "game-start-msg": "Pulsa Comenzar para jugar",
     "game-btn": "Comenzar",
     "game-score-label": "Puntos:",
-    "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo."
+    "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo.",
+    "date-2020": "2020 — Actualidad",
+    "date-2019": "2019 — Actualidad"
   }
 };
 
