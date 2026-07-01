@@ -474,3 +474,41 @@ if (startGameBtn) {
     startGame();
   });
 }
+
+// Seguiment de clics de contacte amb Google Analytics
+document.addEventListener("DOMContentLoaded", () => {
+
+  // WhatsApp
+  const whatsapp = document.querySelector('a[href^="https://wa.me"]');
+  if (whatsapp) {
+    whatsapp.addEventListener("click", () => {
+      gtag('event', 'clic_whatsapp', {
+        event_category: 'contacte',
+        event_label: 'WhatsApp'
+      });
+    });
+  }
+
+  // Email
+  const email = document.querySelector('a[href^="mailto:"]');
+  if (email) {
+    email.addEventListener("click", () => {
+      gtag('event', 'clic_email', {
+        event_category: 'contacte',
+        event_label: 'Email'
+      });
+    });
+  }
+
+  // Telèfon
+  const telefon = document.querySelector('a[href^="tel:"]');
+  if (telefon) {
+    telefon.addEventListener("click", () => {
+      gtag('event', 'clic_telefon', {
+        event_category: 'contacte',
+        event_label: 'Telèfon'
+      });
+    });
+  }
+
+});
