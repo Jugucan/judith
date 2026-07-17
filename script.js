@@ -69,7 +69,7 @@ const translations = {
     "game-score-label": "Punts:",
     "game-over-msg": "💥 Oh no! Has topat amb un obstacle.",
     "date-2020": "2020 — Actualitat",
-    "date-2019": "2019 — Actualitat"
+    "date-2019": "2019 — Actualitat",
     "title-banda-sonora": "La meva banda sonora 🎵",
     "music-p1": "Com que m'agrada fer les coses diferents, divertides i úniques, he decidit que un currículum digital es mereixia tenir la seva pròpia melodia de presentació.",
     "music-p2": "Premeu el <em>play</em> per conèixer-me amb una mica de ritme i bon rotllo!",
@@ -164,6 +164,19 @@ function changeLanguage(lang) {
   document.getElementById('btn-ca')?.classList.toggle('active', lang === 'ca');
   document.getElementById('btn-es')?.classList.toggle('active', lang === 'es');
   localStorage.setItem('idioma-preferit', lang);
+
+  // CONTROL DELS BOTONS DE DESCÀRREGA DEL CV PDF
+  const cvCa = document.getElementById('cv-download-ca');
+  const cvEs = document.getElementById('cv-download-es');
+  if (cvCa && cvEs) {
+    if (lang === 'ca') {
+      cvCa.style.display = 'inline-flex';
+      cvEs.style.display = 'none';
+    } else {
+      cvCa.style.display = 'none';
+      cvEs.style.display = 'inline-flex';
+    }
+  }
 }
 
 // Escuitar botons d'idioma
