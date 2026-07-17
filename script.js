@@ -74,6 +74,7 @@ const translations = {
     "music-p1": "Com que m'agrada fer les coses diferents, he creat aquesta cançó des de zero. <strong>La lletra és 100% meva</strong> i he definit personalment l'estil i el ritme que em representen, utilitzant la intel·ligència artificial (IA) com a eina per fer la composició musical.",
     "music-p2": "Premeu el <em>play</em> per conèixer la meva història amb una mica de ritme i bon rotllo!",
     "music-lyrics-btn": "Llegir la lletra que he escrit"
+},
 
   es: {
     "meta-title": "Judith Gutiérrez — Gestión digital · Fitness · BTT",
