@@ -142,7 +142,7 @@ const translations = {
     "game-score-label": "Puntos:",
     "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo.",
     "date-2020": "2020 — Actualidad",
-    "date-2019": "2019 — Actualidad"
+    "date-2019": "2019 — Actualidad",
     "title-banda-sonora": "Mi banda sonora 🎵",
     "music-p1": "Como me gusta hacer las cosas diferentes, divertidas y únicas, he decidido que un currículum digital se merecía tener su propia melodía de presentación.",
     "music-p2": "¡Dadle al <em>play</em> para conocerme con un poco de ritmo y buen rollo!",
