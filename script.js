@@ -70,6 +70,10 @@ const translations = {
     "game-over-msg": "💥 Oh no! Has topat amb un obstacle.",
     "date-2020": "2020 — Actualitat",
     "date-2019": "2019 — Actualitat"
+    "title-banda-sonora": "La meva banda sonora 🎵",
+    "music-p1": "Com que m'agrada fer les coses diferents, divertides i úniques, he decidit que un currículum digital es mereixia tenir la seva pròpia melodia de presentació.",
+    "music-p2": "Premeu el <em>play</em> per conèixer-me amb una mica de ritme i bon rotllo!",
+    "music-lyrics-btn": "Veure la lletra de la cançó"
   },
   es: {
     "meta-title": "Judith Gutiérrez — Gestión digital · Fitness · BTT",
@@ -139,6 +143,10 @@ const translations = {
     "game-over-msg": "💥 ¡Oh no! Has chocado con un obstáculo.",
     "date-2020": "2020 — Actualidad",
     "date-2019": "2019 — Actualidad"
+    "title-banda-sonora": "Mi banda sonora 🎵",
+    "music-p1": "Como me gusta hacer las cosas diferentes, divertidas y únicas, he decidido que un currículum digital se merecía tener su propia melodía de presentación.",
+    "music-p2": "¡Dadle al <em>play</em> para conocerme con un poco de ritmo y buen rollo!",
+    "music-lyrics-btn": "Ver la letra de la canción"
   }
 };
 
