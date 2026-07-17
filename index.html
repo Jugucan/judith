@@ -59,10 +59,20 @@
         Gestora digital, instructora de fitness i guia de BTT.
         Em fascina crear, dinamitzar i veure com les coses prenen forma.
       </p>
-      <div class="hero__actions">
-        <a href="#contacte" class="btn btn--primary" data-key="hero-btn-primary">Treballem junts</a>
-        <a href="#experiencia" class="btn btn--ghost" data-key="hero-btn-ghost">Veure trajectòria →</a>
-      </div>
+      <div class="hero__actions" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+     <a href="#contacte" class="btn btn--primary" data-key="hero-btn-primary">Treballem junts</a>
+     <a href="#experiencia" class="btn btn--ghost" data-key="hero-btn-ghost">Veure trajectòria →</a>
+
+     <!-- Botó de descàrrega del CV (Català) -->
+     <a href="cv-judith-gutierrez-ca.pdf" download id="cv-download-ca" class="btn btn--ghost" style="border: 1px solid #111; display: inline-flex; align-items: center; gap: 8px;">
+       📥 <span data-key="cv-download-text">Descarregar CV (PDF)</span>
+     </a>
+
+     <!-- Botó de descàrrega del CV (Castellà) - Inicialment ocult -->
+     <a href="cv-judith-gutierrez-es.pdf" download id="cv-download-es" class="btn btn--ghost" style="border: 1px solid #111; display: none; align-items: center; gap: 8px;">
+       📥 <span data-key="cv-download-text">Descargar CV (PDF)</span>
+     </a>
+   </div>
     </div>
     <div class="hero__photo">
       <img src="judith.jpg" alt="Judith Gutiérrez" />
