@@ -540,42 +540,40 @@
   <script src="script.js"></script>
   
   <script>
-    // Llista dels IDs de les seccions que vols monitorar
-    // ✅ Codi actualitzat amb totes les seccions reals
-const seccionsIDs = [
-  'top',
-  'sobre-mi',
-  'experiencia',
-  'formacio',
-  'habilitats',
-  'cafe',
-  'banda-sonora',
-  'joc',
-  'contacte'
-];
-  
+    // 1. Llista dels IDs de totes les seccions
+    const seccionsIDs = [
+      'top',
+      'sobre-mi',
+      'experiencia',
+      'formacio',
+      'habilitats',
+      'cafe',
+      'banda-sonora',
+      'joc',
+      'contacte'
+    ];
+
+    // 2. Sensor de moviment per mesurar el temps i les vistes de seccions
     let horesInici = {};
-  
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const idSeccio = entry.target.id;
-  
+
         if (entry.isIntersecting) {
-          // La secció ha entrat a la pantalla: guardem l'hora d'inici
+          // La secció ha entrat a la pantalla
           horesInici[idSeccio] = Date.now();
-  
-          // Enviem a Google Analytics que la secció s'ha vist
+
           if (typeof gtag === 'function') {
             gtag('event', 'seccio_vista', {
               'nom_seccio': idSeccio
             });
           }
         } else {
-          // La secció ha sortit de la pantalla: calculem el temps
+          // La secció ha sortit de la pantalla: calculem la durada
           if (horesInici[idSeccio]) {
             const tempsSegons = Math.round((Date.now() - horesInici[idSeccio]) / 1000);
-  
-            // Si s'hi ha estat més de 2 segons, enviem el temps a Analytics
+
             if (tempsSegons >= 2 && typeof gtag === 'function') {
               gtag('event', 'temps_seccio', {
                 'nom_seccio': idSeccio,
@@ -587,17 +585,60 @@ const seccionsIDs = [
         }
       });
     }, {
-      threshold: 0.4 // Es detecta quan el 40% de la secció és visible a la pantalla
+      threshold: 0.4
     });
-  
-    // Activem l'observador per a cada secció
+
+    // 3. Quan la web estigui carregada, activem el sensor i els botons
     document.addEventListener("DOMContentLoaded", function() {
+
+      // Activem el sensor per a cada secció
       seccionsIDs.forEach(id => {
         const el = document.getElementById(id);
         if (el) observer.observe(el);
       });
+
+      // SEGUIMENT 1: Descàrrega del CV
+      const btnCvCa = document.getElementById('cv-download-ca');
+      const btnCvEs = document.getElementById('cv-download-es');
+
+      if (btnCvCa) {
+        btnCvCa.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'descarrega_cv', { 'idioma': 'català' });
+          }
+        });
+      }
+
+      if (btnCvEs) {
+        btnCvEs.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'descarrega_cv', { 'idioma': 'castellà' });
+          }
+        });
+      }
+
+      // SEGUIMENT 2: Reproducció de la cançó
+      const audioPlayer = document.querySelector('audio');
+      if (audioPlayer) {
+        audioPlayer.addEventListener('play', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'reproduir_canco', { 'nom_canco': 'canco-judith' });
+          }
+        });
+      }
+
+      // SEGUIMENT 3: Inici del Joc BTT
+      const btnJoc = document.getElementById('startGameBtn');
+      if (btnJoc) {
+        btnJoc.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'iniciar_joc', { 'joc_nom': 'joc_btt' });
+          }
+        });
+      }
+
     });
   </script>
-  
+
 </body>
 </html>
