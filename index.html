@@ -538,5 +538,66 @@
   </button>
 
   <script src="script.js"></script>
+  
+  <script>
+    // Llista dels IDs de les seccions que vols monitorar
+    // ✅ Codi actualitzat amb totes les seccions reals
+const seccionsIDs = [
+  'top',
+  'sobre-mi',
+  'experiencia',
+  'formacio',
+  'habilitats',
+  'cafe',
+  'banda-sonora',
+  'joc',
+  'contacte'
+];
+  
+    let horesInici = {};
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const idSeccio = entry.target.id;
+  
+        if (entry.isIntersecting) {
+          // La secció ha entrat a la pantalla: guardem l'hora d'inici
+          horesInici[idSeccio] = Date.now();
+  
+          // Enviem a Google Analytics que la secció s'ha vist
+          if (typeof gtag === 'function') {
+            gtag('event', 'seccio_vista', {
+              'nom_seccio': idSeccio
+            });
+          }
+        } else {
+          // La secció ha sortit de la pantalla: calculem el temps
+          if (horesInici[idSeccio]) {
+            const tempsSegons = Math.round((Date.now() - horesInici[idSeccio]) / 1000);
+  
+            // Si s'hi ha estat més de 2 segons, enviem el temps a Analytics
+            if (tempsSegons >= 2 && typeof gtag === 'function') {
+              gtag('event', 'temps_seccio', {
+                'nom_seccio': idSeccio,
+                'durada_segons': tempsSegons
+              });
+            }
+            delete horesInici[idSeccio];
+          }
+        }
+      });
+    }, {
+      threshold: 0.4 // Es detecta quan el 40% de la secció és visible a la pantalla
+    });
+  
+    // Activem l'observador per a cada secció
+    document.addEventListener("DOMContentLoaded", function() {
+      seccionsIDs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    });
+  </script>
+  
 </body>
 </html>
