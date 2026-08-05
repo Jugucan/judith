@@ -184,7 +184,15 @@ function changeLanguage(lang) {
 document.getElementById('btn-ca')?.addEventListener('click', () => changeLanguage('ca'));
 document.getElementById('btn-es')?.addEventListener('click', () => changeLanguage('es'));
 
-// Comprovació inicial d'idioma guardat
+// 1. Mirem si la URL conté "?lang=es" o "?lang=ca" (ideal per als codis QR)
+const urlParams = new URLSearchParams(window.location.search);
+const langParam = urlParams.get('lang');
+
+// 2. Si la URL indica idioma, fem servir aquest; si no, el guardat al navegador; i si tampoc n'hi ha, 'ca'
+const initialLang = langParam || localStorage.getItem('idioma-preferit') || 'ca';
+
+// 3. Apliquem l'idioma directament a la web
+changeLanguage(initialLang);
 const savedLang = localStorage.getItem('idioma-preferit') || 'ca';
 changeLanguage(savedLang);
 
